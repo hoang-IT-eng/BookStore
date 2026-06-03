@@ -120,10 +120,10 @@
     <link href="css/main.css" rel="stylesheet"/>
     <script src="js/app.js"></script>
 </head>
-<body class="antialiased overflow-hidden">
+<body class="antialiased">
 <main class="min-h-screen w-full flex">
 <!-- Image Side (Hidden on Mobile) -->
-<div class="hidden md:flex md:w-1/2 relative overflow-hidden bg-primary">
+<div class="hidden md:flex md:w-1/2 relative overflow-hidden bg-primary sticky top-0 h-screen">
 <img alt="The Modern Library Interior" class="absolute inset-0 w-full h-full object-cover" data-alt="A grand, traditional library with towering oak bookshelves reaching toward a vaulted ceiling. Soft, ethereal morning sunlight streams through high arched windows, illuminating dust motes dancing in the air. The scene is captured in a cinematic, low-contrast style with rich wood tones and deep teal shadows, evoking a sense of timeless wisdom and quiet intellectual sanctuary. The lighting is warm and inviting, emphasizing the textures of aged leather-bound books and polished wooden ladders." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVlKpuvbZ4crgvQOaxOZGgVhD8Ke2hnozNTaJkI818Ns4Q6fW7XPOmZbcQXqUfJRCnZmBDyFU2ok_KS7fLW_AGo3N5J4Yu3hCBBwXn4FVpJesGxymvRiJIZSV33DDtsoqxa5k519u2ssULpNXgu-F9oVJrSk0x0r2UySTDOVFVLDsz1qirOGDyDNgPVXx3Rl68EmW-Qi-WIF-3pIZHdFifC7rxzQDErYLFWzQ4SNPgQdzbyMEz6MpLzL3ck6kJvONNaAgItvo0jrM"/>
 <div class="absolute inset-0 image-overlay"></div>
 <div class="relative z-10 p-xxl flex flex-col justify-between h-full w-full">
@@ -138,8 +138,15 @@
 </div>
 </div>
 <!-- Form Side -->
-<div class="w-full md:w-1/2 bg-surface flex items-center justify-center p-lg md:p-xxl">
+<div class="w-full md:w-1/2 bg-surface flex items-center justify-center p-lg md:p-xxl overflow-y-auto">
 <div class="w-full max-w-md auth-card-transition" id="auth-container">
+<!-- Back Button -->
+<div class="mb-lg">
+<a href="index.html" class="inline-flex items-center gap-xs font-label-md text-on-surface-variant hover:text-primary transition-colors duration-200 group">
+<span class="material-symbols-outlined text-[18px] group-hover:-translate-x-0.5 transition-transform duration-200">arrow_back</span>
+Về trang chủ
+</a>
+</div>
 <!-- Header -->
 <div class="mb-xl">
 <div class="md:hidden mb-lg">
@@ -207,6 +214,65 @@
                         </button>
 </p>
 </div>
+
+<!-- Demo Account Box -->
+<div class="mt-xl rounded-xl border border-outline-variant bg-surface-container-low overflow-hidden">
+<div class="flex items-center gap-xs px-md py-sm bg-primary-container/30 border-b border-outline-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">info</span>
+<span class="font-label-md text-primary">Tài khoản demo</span>
+</div>
+<div class="p-md space-y-sm">
+<!-- Khách hàng -->
+<div class="rounded-lg bg-surface border border-outline-variant/60 p-sm flex items-start gap-md">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">person</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-sm mb-xs">
+<span class="font-label-md text-on-surface">Khách hàng</span>
+<button onclick="fillDemo('minh.nguyen@example.com','123456')" class="font-label-sm text-primary hover:text-primary-container transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>Dùng ngay
+</button>
+</div>
+<div class="space-y-xs">
+<div class="flex items-center gap-xs">
+<span class="font-label-sm text-outline w-16 flex-shrink-0">Email</span>
+<code class="font-label-sm text-on-surface-variant bg-surface-container px-xs py-0.5 rounded text-[11px] truncate">minh.nguyen@example.com</code>
+</div>
+<div class="flex items-center gap-xs">
+<span class="font-label-sm text-outline w-16 flex-shrink-0">Mật khẩu</span>
+<code class="font-label-sm text-on-surface-variant bg-surface-container px-xs py-0.5 rounded text-[11px]">123456</code>
+</div>
+</div>
+</div>
+</div>
+<!-- Admin -->
+<div class="rounded-lg bg-surface border border-outline-variant/60 p-sm flex items-start gap-md">
+<div class="w-8 h-8 rounded-full bg-secondary-container/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">admin_panel_settings</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-sm mb-xs">
+<span class="font-label-md text-on-surface">Admin</span>
+<button onclick="fillDemo('admin@themodernlibrary.com','admin123')" class="font-label-sm text-primary hover:text-primary-container transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>Dùng ngay
+</button>
+</div>
+<div class="space-y-xs">
+<div class="flex items-center gap-xs">
+<span class="font-label-sm text-outline w-16 flex-shrink-0">Email</span>
+<code class="font-label-sm text-on-surface-variant bg-surface-container px-xs py-0.5 rounded text-[11px] truncate">admin@themodernlibrary.com</code>
+</div>
+<div class="flex items-center gap-xs">
+<span class="font-label-sm text-outline w-16 flex-shrink-0">Mật khẩu</span>
+<code class="font-label-sm text-on-surface-variant bg-surface-container px-xs py-0.5 rounded text-[11px]">admin123</code>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 </div>
 </div>
 </main>
@@ -319,5 +385,20 @@
             e.preventDefault();
             showNotification('Demo: Liên hệ hotline 1900-xxxx hoặc email support@themodernlibrary.com để đặt lại mật khẩu.');
         };
+
+        function fillDemo(email, password) {
+            // Switch to login mode first
+            if (!isLoginMode) toggleAuthMode();
+            setTimeout(() => {
+                document.getElementById('email').value = email;
+                document.getElementById('password').value = password;
+                // Animate the fields
+                ['email', 'password'].forEach(id => {
+                    const el = document.getElementById(id);
+                    el.classList.add('ring-2', 'ring-primary', 'border-primary');
+                    setTimeout(() => el.classList.remove('ring-2', 'ring-primary', 'border-primary'), 1200);
+                });
+            }, isLoginMode ? 0 : 350);
+        }
     </script>
 </body></html>
