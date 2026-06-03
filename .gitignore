@@ -1,0 +1,28 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VS Code
+.vscode/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Logs
+*.log
+
+# Temp files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Archive/compressed
+*.zip
+*.rar
+*.7z
+
+# Screen captures (optional - comment out if you want to keep these)
+# **/screen.png

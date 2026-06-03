@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lexicon Admin - Order Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#660010",
+                        "on-primary-fixed-variant": "#114d5d",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c0c8cb",
+                        "primary-container": "#0f4c5c",
+                        "on-surface-variant": "#40484b",
+                        "surface-container-low": "#f3f4f3",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#410007",
+                        "primary-fixed": "#b6ebfe",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#87bbce",
+                        "surface": "#f9f9f8",
+                        "on-secondary-fixed-variant": "#7a3000",
+                        "inverse-surface": "#2f3130",
+                        "surface-container": "#eeeeed",
+                        "secondary": "#a04100",
+                        "tertiary-container": "#90001b",
+                        "on-surface": "#1a1c1c",
+                        "secondary-fixed": "#ffdbcc",
+                        "inverse-primary": "#9acee1",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#dadad9",
+                        "surface-container-highest": "#e2e2e2",
+                        "secondary-container": "#fd7729",
+                        "on-tertiary-fixed-variant": "#92001b",
+                        "primary": "#003441",
+                        "on-background": "#1a1c1c",
+                        "tertiary-fixed": "#ffdad8",
+                        "surface-variant": "#e2e2e2",
+                        "surface-tint": "#306576",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e8e8e7",
+                        "inverse-on-surface": "#f1f1f0",
+                        "on-primary-fixed": "#001f28",
+                        "secondary-fixed-dim": "#ffb693",
+                        "primary-fixed-dim": "#9acee1",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb3b0",
+                        "background": "#f9f9f8",
+                        "on-tertiary-container": "#ff9694",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#f9f9f8",
+                        "outline": "#70787c",
+                        "on-secondary-container": "#5e2300",
+                        "on-secondary-fixed": "#351000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "xl": "40px",
+                        "sm": "8px",
+                        "xxl": "64px",
+                        "md": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "headline-sm": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "title-lg": ["20px", { "lineHeight": "1.5", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.7", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .status-chip {
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    </style>
+    <script src="js/app.js"></script>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen flex overflow-hidden">
+<aside id="admin-sidebar" class="w-72 bg-surface-container-low border-r border-outline-variant hidden md:flex flex-col h-screen sticky top-0 shrink-0"></aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col h-screen overflow-y-auto min-w-0">
+<!-- TopAppBar -->
+<header class="w-full h-16 bg-surface-container-lowest dark:bg-surface-dim border-b border-outline-variant dark:border-outline flex items-center justify-between px-lg sticky top-0 z-40">
+<div class="flex items-center flex-1 max-w-xl">
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-primary" data-icon="search">search</span>
+<input class="w-full bg-surface-container border border-outline-variant rounded-full py-xs pl-xl pr-md text-body-md focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="Search orders, customers, or ISBN..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-sm">
+<button class="p-xs rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-xs rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="p-xs rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant mx-xs"></div>
+<div class="flex items-center gap-sm cursor-pointer hover:bg-surface-container px-sm py-xs rounded-lg transition-colors">
+<div class="text-right hidden sm:block">
+<p class="font-label-md text-label-md text-on-surface leading-tight">Admin User</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-70">Support</p>
+</div>
+<img alt="Administrator Avatar" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A professional headshot of a middle-aged male administrator with a confident expression. He is wearing a dark navy suit and a white shirt. The background is a blurred high-end office setting with warm editorial lighting and soft depth of field, reflecting a corporate modern and trustworthy aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiLlC-1frMbDJg0pn1zG8PWcFKyr_Uf1jpfnXNMla0Nb__pKje2L569EDv53pPOTxVetHwpdLzr7Qr_BTiTrDK3X_M3iIprhD35Sash_93ONRV1BY_Km-I2GWZbvh-MRAPBDEXPIupKY4p7OtAbk4lCKR1Jor7H8Q3v6931ClJD97bqokzgqfs2qNMSYZaO5zsKCd_nQwb7VwP2x6bRuFrLq0cUwGsY2KD8XvdSCmOQ7RAp90OFi9pwT8bevAlSV1Zze9YW3HEdKU"/>
+</div>
+</div>
+</header>
+<!-- Canvas Content -->
+<div class="p-xxl max-w-[1280px] mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-lg mb-xxl">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-xs">Quản lý đơn hàng</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Theo dõi và xử lý tất cả đơn hàng của cửa hàng.</p>
+</div>
+<div class="flex gap-md">
+<button class="px-lg py-sm border border-primary text-primary rounded-lg font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+                        Filter Results
+                    </button>
+<button class="px-lg py-sm bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity flex items-center gap-xs">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+                        Export Report
+                    </button>
+</div>
+</div>
+<!-- Stats Overview - Bento Style -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-lg mb-xxl">
+<div class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl flex flex-col justify-between">
+<p class="font-label-md text-label-md text-on-surface-variant mb-md">Doanh thu tháng này</p>
+<div class="flex items-end justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary" id="don-revenue">0đ</h3>
+<span class="text-secondary font-bold text-label-sm">+12.5%</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl flex flex-col justify-between">
+<p class="font-label-md text-label-md text-on-surface-variant mb-md">Tổng đơn hàng</p>
+<div class="flex items-end justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary" id="don-total">0</h3>
+<span class="text-primary font-bold text-label-sm">Đơn hàng</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl flex flex-col justify-between">
+<p class="font-label-md text-label-md text-on-surface-variant mb-md">Đang xử lý</p>
+<div class="flex items-end justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary" id="don-pending">0</h3>
+<span class="text-on-surface-variant opacity-60 font-bold text-label-sm">Đơn</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl flex flex-col justify-between">
+<p class="font-label-md text-label-md text-on-surface-variant mb-md">Đã giao thành công</p>
+<div class="flex items-end justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary" id="don-delivered">0</h3>
+<span class="text-secondary font-bold text-label-sm">Đơn</span>
+</div>
+</div>
+</div>
+<!-- Order Table Container -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div class="px-lg py-md border-b border-outline-variant bg-surface-container-low/30 flex justify-between items-center">
+<h4 class="font-title-lg text-title-lg text-primary">Danh sách đơn hàng</h4>
+<div class="flex items-center gap-sm">
+<span class="text-label-md text-on-surface-variant" id="orders-showing-label">Đang tải...</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/10">
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant border-b border-outline-variant">Mã đơn hàng</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant border-b border-outline-variant">Khách hàng</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant border-b border-outline-variant">Ngày đặt</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant border-b border-outline-variant">Tổng tiền</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant border-b border-outline-variant">Trạng thái</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant border-b border-outline-variant text-right">Thao tác</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant" id="orders-tbody">
+<!-- Dynamic rows -->
+</tbody>
+</table>
+</div>
+<div class="px-lg py-lg border-t border-outline-variant bg-surface-container-low/10 flex flex-col md:flex-row justify-between items-center gap-md">
+<p class="font-label-md text-label-md text-on-surface-variant" id="orders-pagination-label">Hiển thị tất cả đơn hàng</p>
+</div>
+</div>
+<!-- Footer Details -->
+<footer class="mt-xxl border-t border-outline-variant pt-lg text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-md">
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 The Modern Library. Tất cả quyền được bảo lưu.</p>
+<div class="flex gap-lg">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline" href="#">Chính sách bảo mật</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline" href="#">Điều khoản dịch vụ</a>
+</div>
+</footer>
+</div>
+</main>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!requireAdmin()) return;
+            const orders = getOrders();
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+
+            // Stats
+            const totalRevenue = orders.reduce((s, o) => s + o.total, 0);
+            const pending = orders.filter(o => o.status === 'Chờ xử lý').length;
+            const delivered = orders.filter(o => o.status === 'Đã giao' || o.status === 'Hoàn thành').length;
+
+            document.getElementById('don-revenue').textContent = formatVND(totalRevenue);
+            document.getElementById('don-total').textContent = orders.length;
+            document.getElementById('don-pending').textContent = pending;
+            document.getElementById('don-delivered').textContent = delivered;
+
+            const showLabel = document.getElementById('orders-showing-label');
+            if (showLabel) showLabel.textContent = `Hiển thị ${orders.length} đơn hàng`;
+
+            const pagLabel = document.getElementById('orders-pagination-label');
+            if (pagLabel) pagLabel.textContent = `Tổng cộng ${orders.length} đơn hàng`;
+
+            // Render table
+            const tbody = document.getElementById('orders-tbody');
+            if (!tbody) return;
+            tbody.innerHTML = '';
+
+            if (orders.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" class="px-lg py-xl text-center text-on-surface-variant">Chưa có đơn hàng nào.</td></tr>`;
+                return;
+            }
+
+            const statusMap = {
+                'Chờ xử lý':    { chip: 'bg-surface-container-high text-on-surface-variant', label: 'Chờ xử lý' },
+                'Đang vận chuyển': { chip: 'bg-primary/10 text-primary', label: 'Đang vận chuyển' },
+                'Đang giao':    { chip: 'bg-primary/10 text-primary', label: 'Đang giao' },
+                'Đã giao':      { chip: 'bg-green-100 text-green-700', label: 'Đã giao' },
+                'Hoàn thành':   { chip: 'bg-green-100 text-green-700', label: 'Hoàn thành' },
+                'Đã hủy':       { chip: 'bg-error/10 text-error', label: 'Đã hủy' },
+            };
+
+            orders.forEach((order) => {
+                const customer = getCustomerForOrder(order);
+                const clientName = customer.name;
+                const s = statusMap[order.status] || { chip: 'bg-surface-container-high text-on-surface-variant', label: order.status };
+                const itemsText = (order.items || []).map(i => `${i.title} x${i.quantity}`).join(', ') || `${order.itemsCount} sản phẩm`;
+
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-surface-container-low transition-colors group';
+                tr.innerHTML = `
+                    <td class="px-lg py-md font-label-md text-label-md text-primary font-bold">#${order.id}</td>
+                    <td class="px-lg py-md font-body-md text-body-md"><div>${clientName}</div><div class="text-xs text-on-surface-variant">${customer.email}</div><div class="text-xs text-outline mt-1">${itemsText}</div></td>
+                    <td class="px-lg py-md font-body-md text-body-md text-on-surface-variant">${order.date}</td>
+                    <td class="px-lg py-md font-body-md text-body-md font-semibold">${formatVND(order.total)}</td>
+                    <td class="px-lg py-md">
+                        <select onchange="changeStatusSelect('${order.id}', this.value)" class="status-chip ${s.chip} border-0 bg-transparent cursor-pointer text-sm">
+                            <option ${order.status==='Chờ xử lý'?'selected':''} value="Chờ xử lý">Chờ xử lý</option>
+                            <option ${order.status==='Đang vận chuyển'?'selected':''} value="Đang vận chuyển">Đang vận chuyển</option>
+                            <option ${order.status==='Đã giao'?'selected':''} value="Đã giao">Đã giao</option>
+                            <option ${order.status==='Đã hủy'?'selected':''} value="Đã hủy">Đã hủy</option>
+                        </select>
+                    </td>
+                    <td class="px-lg py-md text-right space-x-sm">
+                        <button onclick="printOrder('${order.id}')" class="p-xs text-on-surface-variant hover:bg-surface-container-high rounded transition-colors" title="In hóa đơn">
+                            <span class="material-symbols-outlined">print</span>
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        });
+
+        window.changeStatusSelect = function(orderId, newStatus) {
+            const orders = getOrders();
+            const order = orders.find(o => o.id === orderId);
+            if (order) { order.status = newStatus; saveOrders(orders); showNotification(`Đã cập nhật đơn #${orderId} thành "${newStatus}"`); }
+        };
+
+        window.printOrder = function(orderId) {
+            showNotification(`Đang in hóa đơn cho đơn hàng #${orderId}...`);
+        };
+    </script>
+</body></html>

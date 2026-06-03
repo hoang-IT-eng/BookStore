@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chi tiết sách - The Modern Library</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f9f9f8",
+                        "on-secondary-fixed": "#351000",
+                        "on-secondary-container": "#5e2300",
+                        "on-tertiary-fixed": "#410007",
+                        "on-background": "#1a1c1c",
+                        "on-tertiary-fixed-variant": "#92001b",
+                        "on-primary-container": "#87bbce",
+                        "inverse-primary": "#9acee1",
+                        "surface": "#f9f9f8",
+                        "tertiary-container": "#90001b",
+                        "on-surface-variant": "#40484b",
+                        "primary-fixed": "#b6ebfe",
+                        "surface-container-highest": "#e2e2e2",
+                        "tertiary-fixed": "#ffdad8",
+                        "secondary-fixed": "#ffdbcc",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#001f28",
+                        "primary-container": "#0f4c5c",
+                        "surface-container": "#eeeeed",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f3f4f3",
+                        "on-primary-fixed-variant": "#114d5d",
+                        "surface-dim": "#dadad9",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#ff9694",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#fd7729",
+                        "tertiary-fixed-dim": "#ffb3b0",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#ffb693",
+                        "secondary": "#a04100",
+                        "outline": "#70787c",
+                        "primary": "#003441",
+                        "surface-container-high": "#e8e8e7",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f9f9f8",
+                        "on-surface": "#1a1c1c",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#9acee1",
+                        "inverse-surface": "#2f3130",
+                        "inverse-on-surface": "#f1f1f0",
+                        "tertiary": "#660010",
+                        "surface-tint": "#306576",
+                        "on-secondary-fixed-variant": "#7a3000",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c0c8cb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "40px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "xxl": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Playfair Display"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "title-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "title-lg": ["20px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .book-card-hover:hover {
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.04);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        .inner-stroke {
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+        }
+    </style>
+<link href="css/main.css" rel="stylesheet"/>
+<script src="js/app.js"></script>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="w-full sticky top-0 z-50 bg-surface border-b border-outline-variant shadow-sm">
+<div class="max-w-7xl mx-auto px-lg py-md flex items-center justify-between gap-xl">
+<div class="flex items-center gap-xl">
+<a class="font-display-lg text-display-lg text-primary" href="index.html">The Modern Library</a>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="danh-muc-sach.html">Danh mục</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="danh-muc-sach.html?filter=bestseller">Bán chạy</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="danh-muc-sach.html?filter=new">Sách mới</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="danh-muc-sach.html?filter=deals">Khuyến mãi</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="blog-review-sach.html">Blog</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="danh-muc-sach.html">Deals</a>
+</nav>
+</div>
+<div class="flex items-center gap-md flex-1 max-w-md mx-xl hidden lg:flex">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-primary">search</span>
+<input class="w-full pl-[48px] pr-md py-sm bg-surface border border-outline rounded-lg focus:ring-2 focus:ring-primary focus:outline-none text-body-md shadow-sm transition-all duration-300 focus:shadow-md" placeholder="Tìm kiếm sách, tác giả..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-sm text-primary hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button class="p-sm text-primary hover:bg-surface-container-high rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute top-0 right-0 bg-secondary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">2</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-lg py-xl">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-sm text-label-md text-on-surface-variant mb-xl">
+<a class="hover:text-primary" href="index.html">Trang chủ</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary" id="breadcrumb-category" href="danh-muc-sach.html">Văn học</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface font-semibold" id="breadcrumb-title">Chi tiết sách</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xxl mb-xxl">
+<!-- Left: Gallery -->
+<div class="lg:col-span-5 flex flex-col md:flex-row gap-md">
+<div class="flex md:flex-col gap-sm order-2 md:order-1" id="thumbnails-container">
+<button class="w-16 h-20 border-2 border-primary rounded overflow-hidden p-xs bg-white">
+<img id="thumb-1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsPeCh7UeYB40ISsrCsx6n0NWGV6GwfbE8j6-Bxn2g5PsyEZUYek1tvOc9lPe50BQ7hjzvV1bPI5EKZjqQVCgjDrAo0kvPdh3orYdDkprbcl0Y4LdKaOlBv9BM1PL7bsc63vOZjyOrgs4-Ar4Q4fBMvo5XwQQSM9NC84asMyfopwobb-zxJGbiEHbg3U6lktuBtg25GU7-734O_y7cPeCdDHqJhnD3T2c1QJN7ntsr7671Qqk3_O_6rostfbMB1P52Bl0NrkAQWlQ"/>
+</button>
+</div>
+<div class="flex-1 order-1 md:order-2">
+<div class="bg-white p-lg rounded-xl border border-outline-variant inner-stroke overflow-hidden flex justify-center items-center">
+<img id="main-book-image" class="w-full h-auto max-h-[600px] object-contain shadow-lg rounded-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsPeCh7UeYB40ISsrCsx6n0NWGV6GwfbE8j6-Bxn2g5PsyEZUYek1tvOc9lPe50BQ7hjzvV1bPI5EKZjqQVCgjDrAo0kvPdh3orYdDkprbcl0Y4LdKaOlBv9BM1PL7bsc63vOZjyOrgs4-Ar4Q4fBMvo5XwQQSM9NC84asMyfopwobb-zxJGbiEHbg3U6lktuBtg25GU7-734O_y7cPeCdDHqJhnD3T2c1QJN7ntsr7671Qqk3_O_6rostfbMB1P52Bl0NrkAQWlQ"/>
+</div>
+</div>
+</div>
+<!-- Right: Details -->
+<div class="lg:col-span-7 flex flex-col gap-lg">
+<div>
+<span id="book-badge" class="inline-block px-sm py-xs bg-primary-container text-on-primary-container text-label-sm rounded-sm mb-sm">Bestseller</span>
+<h1 id="book-title" class="font-display-lg text-display-lg text-primary mb-xs">Nghệ Thuật Của Sự Tĩnh Lặng</h1>
+<p class="font-title-lg text-title-lg text-secondary mb-md">Tác giả: <span id="book-author" class="hover:underline cursor-pointer">Pico Iyer</span></p>
+<div class="flex items-center gap-md mb-lg">
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0.5;">star_half</span>
+</div>
+<span class="text-label-md text-on-surface-variant">(128 Đánh giá)</span>
+<span class="h-4 w-[1px] bg-outline-variant"></span>
+<span class="text-label-md text-on-surface-variant">Đã bán: 1.2k</span>
+</div>
+<div class="grid grid-cols-2 gap-y-sm text-body-md border-y border-outline-variant py-md mb-lg">
+<div class="flex gap-sm">
+<span class="text-on-surface-variant">Nhà xuất bản:</span>
+<span id="book-publisher" class="font-semibold">NXB Trẻ</span>
+</div>
+<div class="flex gap-sm">
+<span class="text-on-surface-variant">Năm xuất bản:</span>
+<span id="book-publish-year" class="font-semibold">2023</span>
+</div>
+<div class="flex gap-sm">
+<span class="text-on-surface-variant">Số trang:</span>
+<span id="book-pages" class="font-semibold">256 trang</span>
+</div>
+<div class="flex gap-sm">
+<span class="text-on-surface-variant">Tình trạng:</span>
+<span id="book-stock-status" class="flex items-center gap-xs text-secondary font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Còn hàng
+                            </span>
+</div>
+</div>
+</div>
+<div class="flex items-baseline gap-lg mb-md">
+<span id="book-price" class="font-display-lg text-display-lg text-on-surface">189.000đ</span>
+<span id="book-old-price" class="text-title-lg text-on-surface-variant line-through">245.000đ</span>
+<span id="book-discount-badge" class="px-sm py-xs bg-error-container text-on-error-container text-label-sm rounded">-25%</span>
+</div>
+<div class="flex flex-col gap-lg">
+<div class="flex items-center gap-xl">
+<span class="text-label-md font-semibold text-on-surface-variant">Số lượng:</span>
+<div class="flex items-center border border-outline rounded-lg overflow-hidden h-10">
+<button class="px-md hover:bg-surface-container transition-colors" onclick="decrementQty()"><span class="material-symbols-outlined">remove</span></button>
+<input id="quantity-input" class="w-12 text-center border-none focus:ring-0 font-bold bg-transparent" min="1" type="number" value="1"/>
+<button class="px-md hover:bg-surface-container transition-colors" onclick="incrementQty()"><span class="material-symbols-outlined">add</span></button>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-md">
+<button id="btn-add-to-cart" class="flex-1 py-md px-xl bg-primary text-on-primary font-bold rounded-lg border-2 border-primary hover:bg-transparent hover:text-primary transition-all duration-300 flex items-center justify-center gap-sm group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">shopping_cart</span>
+                            Thêm vào giỏ hàng
+                        </button>
+<button id="btn-buy-now" class="flex-1 py-md px-xl bg-secondary text-white font-bold rounded-lg border-2 border-secondary hover:opacity-90 transition-all duration-300 shadow-md">
+                            Mua ngay
+                        </button>
+</div>
+<button id="btn-wishlist" class="flex items-center gap-sm text-primary font-semibold hover:text-secondary transition-colors w-fit">
+<span class="material-symbols-outlined" id="wishlist-icon">favorite</span>
+                        <span id="wishlist-text">Thêm vào danh sách yêu thích</span>
+                    </button>
+</div>
+</div>
+</div>
+<!-- Tabs Section -->
+<section class="mt-xxl">
+<div class="border-b border-outline-variant flex gap-xl overflow-x-auto no-scrollbar">
+<button class="tab-btn py-md font-bold text-title-lg border-b-2 border-primary text-primary whitespace-nowrap" onclick="switchTab(event, 'description')">Mô tả sản phẩm</button>
+<button class="tab-btn py-md font-medium text-title-lg border-b-2 border-transparent text-on-surface-variant hover:text-primary whitespace-nowrap" onclick="switchTab(event, 'details')">Thông tin chi tiết</button>
+<button class="tab-btn py-md font-medium text-title-lg border-b-2 border-transparent text-on-surface-variant hover:text-primary whitespace-nowrap" onclick="switchTab(event, 'reviews')">Đánh giá khách hàng (128)</button>
+</div>
+<div class="tab-content py-xl block" id="description">
+<div class="max-w-4xl flex flex-col gap-md">
+<p class="text-body-lg leading-relaxed">
+                        Trong một thế giới đầy những huyên náo và chuyển động không ngừng, "Nghệ Thuật Của Sự Tĩnh Lặng" của Pico Iyer mở ra một góc nhìn sâu sắc về giá trị của việc dừng lại. Cuốn sách không chỉ là một tập tiểu luận về thiền định, mà là một hành trình khám phá tâm hồn, giúp người đọc tìm thấy sự cân bằng trong kỷ nguyên kỹ thuật số.
+                    </p>
+<p class="text-body-lg leading-relaxed">
+                        Tác giả Pico Iyer, một nhà báo du hành nổi tiếng, đã dành nhiều năm để quan sát và đúc kết: "Càng có nhiều cách để kết nối, chúng ta càng có xu hướng cảm thấy lạc lõng". Ông dẫn dắt chúng ta qua những câu chuyện về những người tìm thấy sức mạnh trong sự yên lặng, từ những nhà sư trên núi cao đến những CEO thành đạt tại Thung lũng Silicon.
+                    </p>
+</div>
+</div>
+<div class="tab-content py-xl hidden" id="details">
+<div class="max-w-2xl bg-white border border-outline-variant rounded-xl overflow-hidden">
+<div class="grid grid-cols-2 border-b border-outline-variant">
+<div class="p-md bg-surface-container font-semibold">Mã hàng</div>
+<div class="p-md">8935270701234</div>
+</div>
+<div class="grid grid-cols-2 border-b border-outline-variant">
+<div class="p-md bg-surface-container font-semibold">ISBN</div>
+<div class="p-md">978-604-1-12345-6</div>
+</div>
+<div class="grid grid-cols-2 border-b border-outline-variant">
+<div class="p-md bg-surface-container font-semibold">Trọng lượng</div>
+<div class="p-md">350g</div>
+</div>
+<div class="grid grid-cols-2 border-b border-outline-variant">
+<div class="p-md bg-surface-container font-semibold">Kích thước</div>
+<div class="p-md">13 x 20.5 cm</div>
+</div>
+<div class="grid grid-cols-2">
+<div class="p-md bg-surface-container font-semibold">Loại bìa</div>
+<div class="p-md">Bìa mềm (Softcover)</div>
+</div>
+</div>
+</div>
+<div class="tab-content py-xl hidden" id="reviews">
+<div class="flex flex-col md:flex-row gap-xxl mb-xl">
+<div class="flex flex-col items-center gap-sm p-lg bg-surface-container rounded-xl min-w-[200px]">
+<span class="text-[48px] font-bold text-primary">4.8</span>
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-label-md text-on-surface-variant">Dựa trên 128 đánh giá</span>
+</div>
+<div class="flex-1 flex flex-col gap-sm">
+<button class="w-full py-md px-lg border-2 border-dashed border-outline-variant rounded-xl text-on-surface-variant hover:border-primary hover:text-primary transition-all flex flex-col items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[32px]">photo_camera</span>
+<span class="font-semibold">Viết đánh giá &amp; Tải ảnh thực tế</span>
+</button>
+</div>
+</div>
+<div class="space-y-lg">
+<div class="p-lg bg-white border border-outline-variant rounded-xl">
+<div class="flex items-center justify-between mb-sm">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold">NH</div>
+<div>
+<h4 class="font-bold">Nguyễn Hoàng</h4>
+<p class="text-label-sm text-on-surface-variant">Đã mua hàng • 2 ngày trước</p>
+</div>
+</div>
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="text-body-md mb-md">Sách rất hay, đóng gói cẩn thận. Nội dung sâu sắc giúp mình thay đổi thói quen dùng điện thoại quá nhiều.</p>
+<div class="flex gap-sm">
+<img class="w-20 h-20 object-cover rounded border border-outline-variant" data-alt="A lifestyle photo of a book sitting on a wooden coffee table next to a steaming cup of tea. The lighting is warm and domestic, suggesting a peaceful reading environment. The image reflects the user's authentic experience with the product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI1bt_iipDeMenmk5jPpOfN_mrofGegANc9AoZHxougne8EJ0BOA8zop38qWz2uAZIjl7WaIFYUxFzAXzH8teSCYTOtUgmKewghIZVSV9_3YYsnQefcnnR-hMxZ8rskJL-yocJGwOVbApEV7ioNemuc2QCosaUqISch_inkqV7kodsWcHkCjY0B01_KB_EIThs6wJHR0Lx3pOIrNek8L6__MJniHl1NODjUziWYgNJh3mdNBQmGoBOAhHmeK4sNCFobAab-sF8b-A"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recommendations -->
+<section class="mt-xxl">
+<div class="flex items-center justify-between mb-lg">
+<h2 class="font-headline-md text-headline-md text-primary">Sách cùng thể loại</h2>
+<a class="text-primary font-bold hover:underline" href="#">Xem tất cả</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-lg">
+<!-- Book Card 1 -->
+<div class="bg-white rounded-lg border border-outline-variant overflow-hidden book-card-hover group">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A clean book cover featuring bold typography and minimalist graphic design. The aesthetic is corporate and modern, with a clear focus on the title. The lighting is high-key white, creating a premium feel that aligns with a curated library catalog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhb4z_y7sDLQ3Q5D9PKHFX2RFrp_K8a5R_Yw58-jNYiWmUPUtJAHg4YWYwfyagjML-TmGXELEZrcIIwzcv2-xAPLh0KHLJXemwlHvi5TZPm8zfCChJaLE4RkVlvbvV3qWSY3IVNxFrmjktj8CxZ_NoKalqdenJMTOUncFfHSagNTjcdUdDmqgyN-lQt4O1affWbztlguXPd1XM-MBMD0l_cElA_AQGUEqe1UfA_km4jOLYuXc-UId0xYLdt4V6gjOLtVIlm9p-fyA"/>
+<button class="absolute bottom-md right-md bg-secondary text-white p-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<div class="p-md">
+<h3 class="font-headline-sm text-[18px] text-primary truncate">Tư Duy Phản Biện</h3>
+<p class="text-label-md text-on-surface-variant mb-sm">Richard Paul</p>
+<p class="font-bold text-on-surface">210.000đ</p>
+</div>
+</div>
+<!-- Book Card 2 -->
+<div class="bg-white rounded-lg border border-outline-variant overflow-hidden book-card-hover group">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="An artistic book cover with a deep blue palette and gold foil accents. The visual style is elegant and sophisticated, representing a high-end literature piece. The image captures the texture of the foil under bright gallery lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd7vJZVwpsfT7etF-tcfcrn9mI749mM2VHkzYKYM-txZ02aZ-9gpRsnJwev5VfHIeArcheMoANyWmODhrSgCU5CH0H8eedWANgCuPrxuUfL2btj-uyd6e1Kmp0GPddls7UXP6nw2LcO-cev_-XvEwraoW6SnbLKGzfKO4nKWT3lAKOg6afmDSCrr0n-29KNZ6HS49ZhZcb1TG0LKhGAJo6jsweYHsGh_PT8dvLB68hdwedWmM1_SIBQRn5T8EYPE9hGPGuzhsSanA"/>
+<button class="absolute bottom-md right-md bg-secondary text-white p-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<div class="p-md">
+<h3 class="font-headline-sm text-[18px] text-primary truncate">Sức Mạnh Của Thói Quen</h3>
+<p class="text-label-md text-on-surface-variant mb-sm">Charles Duhigg</p>
+<p class="font-bold text-on-surface">155.000đ</p>
+</div>
+</div>
+<!-- Book Card 3 -->
+<div class="bg-white rounded-lg border border-outline-variant overflow-hidden book-card-hover group">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A classic book design with traditional serif fonts and a detailed illustration. The lighting is warm, evoking a sense of history and intellectual value. This represents the 'traditional publishing' side of the brand's identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoaUDe1mIOocHk1mIJT1Y3k3StIQPfW9Ww9LHWEVyrSo1lBIrSEyq5Krx7otELQxTYqrGyZx2svBZVVTGgEyeTVcmpd4SxqCUmourEyzcDH-MGaVDrzcFsMvh2mXGFSrNP0ULoU973an-bjSHhzDwxBNAShYYJ34fuqcQRDsdy4bogz7kcXo8S-zZGuIwn9-aQK2J8uvAEXbQSzkQc8qzIDTNREDyk2G-A5sGWTZeHUgfDy_RpjNiO0JXzkpX0tt-_QBi9JygCjSY"/>
+<button class="absolute bottom-md right-md bg-secondary text-white p-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<div class="p-md">
+<h3 class="font-headline-sm text-[18px] text-primary truncate">Nhà Giả Kim</h3>
+<p class="text-label-md text-on-surface-variant mb-sm">Paulo Coelho</p>
+<p class="font-bold text-on-surface">89.000đ</p>
+</div>
+</div>
+<!-- Book Card 4 -->
+<div class="bg-white rounded-lg border border-outline-variant overflow-hidden book-card-hover group">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A vibrant and colorful book cover with modern abstract art. The lighting is bright and contemporary, highlighting the saturated colors. This fits the brand's 'Modern' aspect, appealing to a trendy, design-conscious audience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJOkclUEPnYMkKlrbTzDXzyIMYePtsYp6tpa8Ikmd4YVY_O6dWZMWLNWchX4G2Im0M7iVHyDi-45rAybat5SROm3BC98ZBRmC1-E4a13Vj3X-b8ZRO5o-YYT24j5-tzCxmglI0dLcqXS9_GfVhWlx6HKNS2QNFRpI0r8sGs0j0PNb1hj4GA6wqmWdm47fsgg8iGgOQQR7kjfaFeTXhrpVngSgBNyhoPxDFH_OgXq-b0Pmrv28-wZ45sniQ20a4FGAoxiEVh3kfOOw"/>
+<button class="absolute bottom-md right-md bg-secondary text-white p-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<div class="p-md">
+<h3 class="font-headline-sm text-[18px] text-primary truncate">Thoát Khỏi Vùng An Toàn</h3>
+<p class="text-label-md text-on-surface-variant mb-sm">John Doe</p>
+<p class="font-bold text-on-surface">178.000đ</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-xxl bg-surface-container-highest">
+<div class="max-w-7xl mx-auto px-lg py-xxl grid grid-cols-1 md:grid-cols-4 gap-xl">
+<div class="flex flex-col gap-md">
+<span class="font-headline-sm text-headline-sm text-primary">The Modern Library</span>
+<p class="text-on-surface-variant text-body-md">Kiến tạo không gian tri thức hiện đại cho người đọc Việt.</p>
+<div class="flex gap-md mt-sm">
+<a class="text-primary hover:text-secondary" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-primary hover:text-secondary" href="#"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-primary hover:text-secondary" href="#"><span class="material-symbols-outlined">call</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-md">Hỗ trợ</h4>
+<ul class="flex flex-col gap-sm">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Shipping Info</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-md">Về chúng tôi</h4>
+<ul class="flex flex-col gap-sm">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Newsletter</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Hệ thống cửa hàng</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-md">Đăng ký nhận tin</h4>
+<p class="text-label-md text-on-surface-variant mb-md">Nhận thông báo về sách mới và ưu đãi đặc quyền.</p>
+<div class="flex gap-sm">
+<input class="bg-surface border border-outline rounded-lg px-md py-sm flex-1 focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Email của bạn" type="email"/>
+<button class="bg-primary text-white p-sm rounded-lg hover:opacity-90"><span class="material-symbols-outlined">send</span></button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-lg py-md border-t border-outline-variant text-center text-on-surface-variant text-label-md">
+            © 2024 The Modern Library. All rights reserved.
+        </div>
+</footer>
+<script>
+        function switchTab(event, tabId) {
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+                content.classList.remove('block');
+            });
+            
+            // Show selected content
+            document.getElementById(tabId).classList.remove('hidden');
+            document.getElementById(tabId).classList.add('block');
+            
+            // Reset tab button styles
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('border-primary', 'text-primary', 'font-bold');
+                btn.classList.add('border-transparent', 'text-on-surface-variant', 'font-medium');
+            });
+            
+            // Set active button style
+            event.currentTarget.classList.add('border-primary', 'text-primary', 'font-bold');
+            event.currentTarget.classList.remove('border-transparent', 'text-on-surface-variant', 'font-medium');
+        }
+
+        // Quantity controls
+        const qtyInput = document.getElementById('quantity-input');
+        function incrementQty() {
+            let val = parseInt(qtyInput.value) || 1;
+            qtyInput.value = val + 1;
+        }
+        function decrementQty() {
+            let val = parseInt(qtyInput.value) || 1;
+            if (val > 1) {
+                qtyInput.value = val - 1;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const bookId = urlParams.get('id') || "1";
+            const books = getBooks();
+            const book = books.find(b => b.id === bookId) || books[0];
+
+            if (book) {
+                // Populate breadcrumbs
+                const catNames = {
+                    skills: 'Kỹ năng',
+                    literature: 'Văn học',
+                    children: 'Thiếu nhi',
+                    academic: 'Sách Giáo khoa'
+                };
+                const catName = catNames[book.category] || 'Sách';
+                const breadcrumbCategory = document.getElementById('breadcrumb-category');
+                breadcrumbCategory.textContent = catName;
+                breadcrumbCategory.href = `danh-muc-sach.html?category=${book.category}`;
+                document.getElementById('breadcrumb-title').textContent = book.title;
+
+                // Populate gallery & image
+                document.getElementById('main-book-image').src = book.image;
+                document.getElementById('main-book-image').alt = book.title;
+                
+                const thumbnailsContainer = document.getElementById('thumbnails-container');
+                if (thumbnailsContainer) {
+                    thumbnailsContainer.innerHTML = '';
+                    // Create 3 thumbnails (main image and 2 duplicates to simulate gallery)
+                    for (let i = 1; i <= 3; i++) {
+                        const thumbBtn = document.createElement('button');
+                        thumbBtn.className = `w-16 h-20 border-2 ${i === 1 ? 'border-primary' : 'border-transparent'} rounded overflow-hidden p-xs bg-white focus:outline-none transition-all`;
+                        thumbBtn.innerHTML = `<img class="w-full h-full object-cover" src="${book.image}" alt="${book.title} thumb ${i}"/>`;
+                        thumbBtn.onclick = () => {
+                            thumbnailsContainer.querySelectorAll('button').forEach(btn => btn.classList.replace('border-primary', 'border-transparent'));
+                            thumbBtn.classList.replace('border-transparent', 'border-primary');
+                            document.getElementById('main-book-image').src = book.image;
+                        };
+                        thumbnailsContainer.appendChild(thumbBtn);
+                    }
+                }
+
+                // Title & Author
+                document.getElementById('book-title').textContent = book.title;
+                document.getElementById('book-author').textContent = book.author;
+                document.getElementById('book-author').onclick = () => {
+                    window.location.href = `danh-muc-sach.html?search=${encodeURIComponent(book.author)}`;
+                };
+
+                // Badge (Bestseller)
+                const badge = document.getElementById('book-badge');
+                if (book.bestseller) {
+                    badge.classList.remove('hidden');
+                } else {
+                    badge.classList.add('hidden');
+                }
+
+                // Prices
+                document.getElementById('book-price').textContent = formatVND(book.price);
+                const oldPriceEl = document.getElementById('book-old-price');
+                const discEl = document.getElementById('book-discount-badge');
+                if (book.oldPrice && book.oldPrice > book.price) {
+                    oldPriceEl.textContent = formatVND(book.oldPrice);
+                    oldPriceEl.classList.remove('hidden');
+                    discEl.textContent = `-${book.discount}%`;
+                    discEl.classList.remove('hidden');
+                } else {
+                    oldPriceEl.classList.add('hidden');
+                    discEl.classList.add('hidden');
+                }
+
+                // Stock status
+                const stockStatus = document.getElementById('book-stock-status');
+                if (book.stock > 0) {
+                    stockStatus.innerHTML = `<span class="w-2 h-2 rounded-full bg-primary"></span> Còn hàng (${book.stock} cuốn)`;
+                    stockStatus.className = "flex items-center gap-xs text-primary font-semibold";
+                } else {
+                    stockStatus.innerHTML = `<span class="w-2 h-2 rounded-full bg-outline"></span> Tạm hết hàng`;
+                    stockStatus.className = "flex items-center gap-xs text-outline font-semibold";
+                }
+
+                // Tabs description & details
+                const descContainer = document.querySelector('#description p');
+                if (descContainer) {
+                    descContainer.textContent = `Cuốn sách "${book.title}" của tác giả ${book.author} là một tác phẩm nổi bật trong danh mục ${catName.toLowerCase()}. Cuốn sách đem đến những góc nhìn mới mẻ và sâu sắc, giúp người đọc đúc kết những bài học giá trị áp dụng vào cuộc sống thực tế. Đây là tựa sách không thể thiếu đối với những ai đam mê khám phá tri thức mới.`;
+                }
+
+                const detailsContainer = document.getElementById('details');
+                if (detailsContainer) {
+                    detailsContainer.innerHTML = `
+                        <div class="max-w-2xl bg-white border border-outline-variant rounded-xl overflow-hidden">
+                            <div class="grid grid-cols-2 border-b border-outline-variant">
+                                <div class="p-md bg-surface-container font-semibold">Mã hàng</div>
+                                <div class="p-md">893527070${book.id.padStart(4, '0')}</div>
+                            </div>
+                            <div class="grid grid-cols-2 border-b border-outline-variant">
+                                <div class="p-md bg-surface-container font-semibold">ISBN</div>
+                                <div class="p-md">978-604-331-${book.id.padStart(4, '0')}</div>
+                            </div>
+                            <div class="grid grid-cols-2 border-b border-outline-variant">
+                                <div class="p-md bg-surface-container font-semibold">Trọng lượng</div>
+                                <div class="p-md">350g</div>
+                            </div>
+                            <div class="grid grid-cols-2 border-b border-outline-variant">
+                                <div class="p-md bg-surface-container font-semibold">Kích thước</div>
+                                <div class="p-md">14 x 20.5 cm</div>
+                            </div>
+                            <div class="grid grid-cols-2">
+                                <div class="p-md bg-surface-container font-semibold">Loại bìa</div>
+                                <div class="p-md">Bìa mềm (Softcover)</div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // Add to cart buttons
+                document.getElementById('btn-add-to-cart').onclick = () => {
+                    const qty = parseInt(qtyInput.value) || 1;
+                    if (book.stock > 0) {
+                        addToCart(book.id, qty);
+                    } else {
+                        showNotification("Sản phẩm hiện đang hết hàng!");
+                    }
+                };
+
+                document.getElementById('btn-buy-now').onclick = () => {
+                    const qty = parseInt(qtyInput.value) || 1;
+                    if (book.stock > 0) {
+                        addToCart(book.id, qty);
+                        window.location.href = 'gio-hang-thanh-toan.html';
+                    } else {
+                        showNotification("Sản phẩm hiện đang hết hàng!");
+                    }
+                };
+
+                // Wishlist button
+                const wishlistBtn = document.getElementById('btn-wishlist');
+                const wishlistIcon = document.getElementById('wishlist-icon');
+                const wishlistText = document.getElementById('wishlist-text');
+                function updateWishlistUI() {
+                    const inList = isInWishlist(book.id);
+                    wishlistIcon.style.fontVariationSettings = inList ? "'FILL' 1" : "'FILL' 0";
+                    wishlistText.textContent = inList ? 'Đã thêm vào yêu thích' : 'Thêm vào danh sách yêu thích';
+                }
+                updateWishlistUI();
+                wishlistBtn.onclick = () => { toggleWishlist(book.id); updateWishlistUI(); };
+
+                // Reviews tab
+                const reviewsTab = document.getElementById('reviews');
+                if (reviewsTab) {
+                    reviewsTab.innerHTML = '';
+                    BOOK_REVIEWS.default.forEach(r => {
+                        const stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+                        reviewsTab.innerHTML += `<div class="border border-outline-variant rounded-xl p-lg mb-md">
+                            <div class="flex items-center gap-md mb-sm"><div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold">${r.author[0]}</div>
+                            <div><p class="font-bold text-primary">${r.author}</p><p class="text-secondary text-sm">${stars}</p></div></div>
+                            <p class="text-body-md text-on-surface-variant">${r.text}</p></div>`;
+                    });
+                }
+                document.querySelector('.tab-btn[onclick*="reviews"]')?.setAttribute('onclick', "switchTab(event, 'reviews')");
+                const reviewBtn = document.querySelectorAll('.tab-btn')[2];
+                if (reviewBtn) reviewBtn.textContent = `Đánh giá khách hàng (${BOOK_REVIEWS.default.length})`;
+
+                // Render Recommendations (same category)
+                const recGrid = document.querySelector('section.mt-xxl div.grid');
+                if (recGrid) {
+                    recGrid.innerHTML = '';
+                    const recBooks = books
+                        .filter(b => b.category === book.category && b.id !== book.id)
+                        .slice(0, 4);
+
+                    // If not enough books of the same category, get others
+                    if (recBooks.length < 4) {
+                        const others = books.filter(b => b.id !== book.id && !recBooks.includes(b)).slice(0, 4 - recBooks.length);
+                        recBooks.push(...others);
+                    }
+
+                    recBooks.forEach(b => {
+                        const card = document.createElement('div');
+                        card.className = "bg-white rounded-lg border border-outline-variant overflow-hidden book-card-hover group flex flex-col justify-between";
+                        
+                        let oldPriceHtml = '';
+                        if (b.oldPrice && b.oldPrice > b.price) {
+                            oldPriceHtml = `<span class="text-label-sm text-on-surface-variant line-through ml-sm">${formatVND(b.oldPrice)}</span>`;
+                        }
+
+                        card.innerHTML = `
+                            <div class="aspect-[3/4] overflow-hidden bg-surface-container relative">
+                                <a href="chi-tiet-sach.html?id=${b.id}">
+                                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="${b.image}" alt="${b.title}"/>
+                                </a>
+                                <button onclick="addToCart('${b.id}'); event.stopPropagation();" class="absolute bottom-md right-md bg-secondary text-white p-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                                </button>
+                            </div>
+                            <div class="p-md flex-1 flex flex-col justify-between gap-xs">
+                                <div>
+                                    <h3 class="font-headline-sm text-[18px] text-primary truncate hover:text-secondary">
+                                        <a href="chi-tiet-sach.html?id=${b.id}">${b.title}</a>
+                                    </h3>
+                                    <p class="text-label-md text-on-surface-variant">${b.author}</p>
+                                </div>
+                                <div class="flex items-center gap-sm mt-sm">
+                                    <span class="font-bold text-on-surface">${formatVND(b.price)}</span>
+                                    ${oldPriceHtml}
+                                </div>
+                            </div>
+                        `;
+                        recGrid.appendChild(card);
+                    });
+                }
+            }
+        });
+    </script>
+</body></html>

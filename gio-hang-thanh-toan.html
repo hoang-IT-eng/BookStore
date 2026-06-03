@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Giỏ hàng &amp; Thanh toán | The Modern Library</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f9f9f8",
+                        "on-secondary-fixed": "#351000",
+                        "on-secondary-container": "#5e2300",
+                        "on-tertiary-fixed": "#410007",
+                        "on-background": "#1a1c1c",
+                        "on-tertiary-fixed-variant": "#92001b",
+                        "on-primary-container": "#87bbce",
+                        "inverse-primary": "#9acee1",
+                        "surface": "#f9f9f8",
+                        "tertiary-container": "#90001b",
+                        "on-surface-variant": "#40484b",
+                        "primary-fixed": "#b6ebfe",
+                        "surface-container-highest": "#e2e2e2",
+                        "tertiary-fixed": "#ffdad8",
+                        "secondary-fixed": "#ffdbcc",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#001f28",
+                        "primary-container": "#0f4c5c",
+                        "surface-container": "#eeeeed",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f3f4f3",
+                        "on-primary-fixed-variant": "#114d5d",
+                        "surface-dim": "#dadad9",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#ff9694",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#fd7729",
+                        "tertiary-fixed-dim": "#ffb3b0",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#ffb693",
+                        "secondary": "#a04100",
+                        "outline": "#70787c",
+                        "primary": "#003441",
+                        "surface-container-high": "#e8e8e7",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f9f9f8",
+                        "on-surface": "#1a1c1c",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#9acee1",
+                        "inverse-surface": "#2f3130",
+                        "inverse-on-surface": "#f1f1f0",
+                        "tertiary": "#660010",
+                        "surface-tint": "#306576",
+                        "on-secondary-fixed-variant": "#7a3000",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c0c8cb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "40px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "xxl": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Playfair Display"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "title-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Playfair Display"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .book-card-inner-stroke {
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+        }
+    </style>
+    <link href="css/main.css" rel="stylesheet"/>
+    <script src="js/app.js"></script>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="w-full sticky top-0 z-50 bg-surface border-b border-outline-variant shadow-sm">
+<div class="max-w-7xl mx-auto px-lg py-md flex items-center justify-between gap-xl">
+<div class="flex items-center gap-xl flex-1">
+<a class="font-display-lg text-display-lg text-primary" href="index.html">The Modern Library</a>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="danh-muc-sach.html">Danh mục</a>
+<a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="danh-muc-sach.html?filter=bestseller">Bán chạy</a>
+<a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="danh-muc-sach.html?filter=new">Sách mới</a>
+<a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="blog-review-sach.html">Blog</a>
+<a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="danh-muc-sach.html">Deals</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative group hidden sm:block">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-primary">search</span>
+<input class="pl-[48px] pr-md py-sm rounded-lg border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary bg-surface-container-low w-[240px] lg:w-[320px] transition-all duration-300" placeholder="Tìm kiếm sách..." type="text"/>
+</div>
+<button class="p-sm rounded-full hover:bg-surface-container transition-colors relative">
+<span class="material-symbols-outlined text-on-surface" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute top-0 right-0 bg-secondary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full shopping-cart-badge">0</span>
+</button>
+<button class="p-sm rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-lg py-xl">
+<h1 class="font-headline-md text-headline-md text-primary mb-xl">Giỏ hàng &amp; Thanh toán</h1>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl items-start">
+<!-- Left Column: Cart Items -->
+<div class="lg:col-span-7 space-y-xl">
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden">
+<div class="p-lg border-b border-outline-variant flex justify-between items-center">
+<h2 id="cart-count-title" class="font-title-lg text-title-lg text-on-surface">Sản phẩm trong giỏ (0)</h2>
+<button id="btn-clear-all" class="text-label-md font-label-md text-secondary hover:underline">Xóa tất cả</button>
+</div>
+<div id="cart-items-container">
+    <!-- Dynamic Cart Items -->
+</div>
+</section>
+<!-- Coupon Input -->
+<section class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant">
+<label class="block font-label-md text-label-md text-on-surface mb-sm">Mã giảm giá</label>
+<div class="flex gap-md">
+<input id="coupon-input" class="flex-1 rounded-lg border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary bg-surface font-body-md" placeholder="Nhập mã khuyến mãi của bạn (ví dụ: GIAM20, FREESHIP)" type="text"/>
+<button id="btn-apply-coupon" class="px-lg py-sm bg-primary text-on-primary font-label-md rounded-lg hover:brightness-110 active:scale-95 transition-all">Áp dụng</button>
+</div>
+<div id="coupon-message" class="text-label-sm mt-xs hidden"></div>
+</section>
+<!-- Payment Methods -->
+<section class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant">
+<h2 class="font-title-lg text-title-lg text-on-surface mb-lg">Phương thức thanh toán</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<label class="flex items-center gap-md p-md border border-outline-variant rounded-lg cursor-pointer hover:border-primary transition-colors group">
+<input checked="" class="text-primary focus:ring-primary" name="payment" type="radio"/>
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+<span class="font-label-md">Thanh toán khi nhận hàng (COD)</span>
+</label>
+<label class="flex items-center gap-md p-md border border-outline-variant rounded-lg cursor-pointer hover:border-primary transition-colors group">
+<input class="text-primary focus:ring-primary" name="payment" type="radio"/>
+<span class="material-symbols-outlined text-primary">account_balance</span>
+<span class="font-label-md">Chuyển khoản ngân hàng</span>
+</label>
+<label class="flex items-center gap-md p-md border border-outline-variant rounded-lg cursor-pointer hover:border-primary transition-colors group">
+<input class="text-primary focus:ring-primary" name="payment" type="radio"/>
+<div class="w-6 h-6 bg-[#A50064] rounded flex items-center justify-center text-[10px] text-white font-bold">Mo</div>
+<span class="font-label-md">Ví điện tử MoMo</span>
+</label>
+<label class="flex items-center gap-md p-md border border-outline-variant rounded-lg cursor-pointer hover:border-primary transition-colors group">
+<input class="text-primary focus:ring-primary" name="payment" type="radio"/>
+<div class="w-6 h-6 bg-[#0068FF] rounded flex items-center justify-center text-[10px] text-white font-bold">Z</div>
+<span class="font-label-md">ZaloPay</span>
+</label>
+<label class="flex items-center gap-md p-md border border-outline-variant rounded-lg cursor-pointer hover:border-primary transition-colors group sm:col-span-2">
+<input class="text-primary focus:ring-primary" name="payment" type="radio"/>
+<span class="material-symbols-outlined text-primary">credit_card</span>
+<span class="font-label-md">Thẻ quốc tế (Visa, Mastercard, JCB)</span>
+</label>
+</div>
+</section>
+</div>
+<!-- Right Column: Sticky Summary & Checkout Form -->
+<div class="lg:col-span-5 space-y-xl lg:sticky lg:top-[100px]">
+<!-- Shipping Address Form -->
+<section class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm">
+<h2 class="font-title-lg text-title-lg text-on-surface mb-lg">Thông tin giao hàng</h2>
+<div class="space-y-md">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs">Họ và tên</label>
+<input id="checkout-name" class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary font-body-md" type="text" value=""/>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs">Số điện thoại</label>
+<input id="checkout-phone" class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary font-body-md" placeholder="0901 234 567" type="tel" value=""/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs">Email</label>
+<input id="checkout-email" class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary font-body-md" placeholder="example@gmail.com" type="email" value=""/>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs">Địa chỉ chi tiết</label>
+<textarea id="checkout-address" class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary font-body-md" rows="2" placeholder="Số nhà, tên đường, phường/xã, quận/huyện, tỉnh/thành phố"></textarea>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs">Phương thức vận chuyển</label>
+<div class="space-y-sm">
+<label class="flex items-center justify-between p-md border border-outline-variant rounded-lg cursor-pointer bg-surface hover:border-primary">
+<div class="flex items-center gap-md">
+<input id="shipping-standard" checked="" class="text-primary focus:ring-primary" name="shipping" type="radio" value="25000"/>
+<span class="font-label-md">Giao hàng tiêu chuẩn (3-5 ngày)</span>
+</div>
+<span class="font-label-md">25.000đ</span>
+</label>
+<label class="flex items-center justify-between p-md border border-outline-variant rounded-lg cursor-pointer bg-surface hover:border-primary">
+<div class="flex items-center gap-md">
+<input id="shipping-express" class="text-primary focus:ring-primary" name="shipping" type="radio" value="50000"/>
+<span class="font-label-md">Giao hàng nhanh (Trong 24h)</span>
+</div>
+<span class="font-label-md">50.000đ</span>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- Order Summary -->
+<section class="bg-surface-container-high p-lg rounded-xl border border-outline-variant">
+<h2 class="font-title-lg text-title-lg text-on-surface mb-lg">Tóm tắt đơn hàng</h2>
+<div class="space-y-sm border-b border-outline-variant pb-lg mb-lg">
+<div class="flex justify-between text-body-md">
+<span id="summary-subtotal-label" class="text-on-surface-variant">Tạm tính (0 sản phẩm)</span>
+<span id="summary-subtotal" class="text-on-surface">0đ</span>
+</div>
+<div class="flex justify-between text-body-md">
+<span class="text-on-surface-variant">Phí vận chuyển</span>
+<span id="summary-shipping" class="text-on-surface">25.000đ</span>
+</div>
+<div class="flex justify-between text-body-md">
+<span class="text-on-surface-variant">Giảm giá</span>
+<span id="summary-discount" class="text-tertiary">0đ</span>
+</div>
+</div>
+<div class="flex justify-between items-baseline mb-xl">
+<span class="font-title-lg text-title-lg text-on-surface">Tổng cộng</span>
+<span id="summary-total" class="font-display-lg text-display-lg text-secondary">0đ</span>
+</div>
+<button id="btn-place-order" class="w-full py-md bg-secondary text-on-secondary font-title-lg rounded-lg shadow-sm hover:brightness-110 active:scale-[0.98] transition-all duration-200">
+    Đặt hàng ngay
+</button>
+<p class="text-label-sm text-on-surface-variant text-center mt-md">
+    Bằng cách đặt hàng, bạn đồng ý với <a class="underline" href="dieu-khoan.html">Điều khoản dịch vụ</a> của chúng tôi.
+</p>
+</section>
+
+<!-- Success Modal overlay -->
+<div id="success-modal" class="fixed inset-0 z-[1000] flex items-center justify-center bg-black/50 backdrop-blur-sm hidden">
+    <div class="bg-white max-w-md w-full mx-md p-xl rounded-xl border border-outline-variant shadow-2xl text-center transform scale-95 opacity-0 transition-all duration-300 flex flex-col items-center gap-md">
+        <span class="material-symbols-outlined text-[64px] text-primary bg-primary-fixed p-md rounded-full">check_circle</span>
+        <h2 class="font-headline-md text-headline-md text-primary mt-sm">Đặt hàng thành công!</h2>
+        <p class="text-body-md text-on-surface-variant leading-relaxed">Cảm ơn bạn đã lựa chọn The Modern Library. Đơn hàng của bạn đã được tiếp nhận và đang được xử lý.</p>
+        <div class="w-full bg-surface-container rounded-lg p-md text-left text-label-md flex flex-col gap-xs mt-sm font-mono text-xs">
+            <div>Mã đơn hàng: <span id="modal-order-id" class="font-bold text-primary"></span></div>
+            <div>Tổng thanh toán: <span id="modal-order-total" class="font-bold text-secondary"></span></div>
+            <div>Địa chỉ giao: <span id="modal-order-address" class="text-on-surface"></span></div>
+        </div>
+        <button id="btn-modal-close" class="w-full mt-lg py-md bg-primary text-on-primary font-bold rounded-lg hover:bg-opacity-95 transition-all">
+            Xem lịch sử đơn hàng
+        </button>
+    </div>
+</div>
+<p class="text-label-sm text-on-surface-variant text-center mt-md">
+                        Bằng cách đặt hàng, bạn đồng ý với <a class="underline" href="dieu-khoan.html">Điều khoản dịch vụ</a> của chúng tôi.
+                    </p>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-xxl bg-surface-container-highest">
+<div class="max-w-7xl mx-auto px-lg py-xxl grid grid-cols-1 md:grid-cols-4 gap-xl">
+<div class="col-span-1 md:col-span-1">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-md">The Modern Library</h3>
+<p class="font-body-md text-on-surface-variant">Lan tỏa tri thức thông qua những trải nghiệm đọc sách hiện đại và tinh tế nhất.</p>
+</div>
+<div>
+<h4 class="font-label-md font-bold text-on-surface mb-md">Về chúng tôi</h4>
+<ul class="space-y-sm">
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Giới thiệu</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Hệ thống cửa hàng</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Tuyển dụng</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="lien-he.html">Liên hệ</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md font-bold text-on-surface mb-md">Hỗ trợ khách hàng</h4>
+<ul class="space-y-sm">
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="chinh-sach.html">Chính sách bảo mật</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="dieu-khoan.html">Điều khoản dịch vụ</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="chinh-sach.html">Thông tin giao hàng</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="chinh-sach.html">Chính sách đổi trả</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md font-bold text-on-surface mb-md">Đăng ký nhận tin</h4>
+<p class="font-body-md text-on-surface-variant mb-md">Nhận ưu đãi độc quyền và thông tin về sách mới sớm nhất.</p>
+<div class="flex flex-col gap-sm">
+<input class="rounded-lg border-outline-variant bg-surface focus:ring-primary focus:border-primary" placeholder="Email của bạn" type="email"/>
+<button class="bg-primary text-on-primary py-sm rounded-lg font-label-md hover:brightness-110 transition-all">Đăng ký</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-lg py-lg border-t border-outline-variant text-center">
+<p class="font-label-sm text-on-surface-variant">© 2024 The Modern Library. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        let discountType = null; // 'fixed' or 'freeship'
+        let discountVal = 0;
+
+        // Render Cart
+        function renderCartPage() {
+            const cart = getCart();
+            const cartItemsContainer = document.getElementById('cart-items-container');
+            const cartCountTitle = document.getElementById('cart-count-title');
+            const btnPlaceOrder = document.getElementById('btn-place-order');
+
+            if (!cartItemsContainer) return;
+
+            // Total quantity count
+            const totalItemsCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountTitle.textContent = `Sản phẩm trong giỏ (${totalItemsCount})`;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="p-xxl text-center flex flex-col items-center gap-md">
+                        <span class="material-symbols-outlined text-[64px] text-outline">shopping_cart</span>
+                        <p class="text-body-lg text-on-surface-variant font-medium">Giỏ hàng của bạn đang trống.</p>
+                        <a href="danh-muc-sach.html" class="mt-sm px-lg py-md bg-primary text-on-primary font-bold rounded-lg hover:bg-opacity-95 transition-all">
+                            Tiếp tục mua sắm
+                        </a>
+                    </div>
+                `;
+                btnPlaceOrder.disabled = true;
+                btnPlaceOrder.classList.add('opacity-50', 'cursor-not-allowed');
+                calculateSummary(0);
+                return;
+            }
+
+            btnPlaceOrder.disabled = false;
+            btnPlaceOrder.classList.remove('opacity-50', 'cursor-not-allowed');
+
+            cartItemsContainer.innerHTML = '';
+            cart.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = "p-lg flex gap-lg border-b border-outline-variant last:border-b-0 hover:bg-surface-container-low transition-colors group";
+                
+                itemDiv.innerHTML = `
+                    <div class="w-24 h-32 flex-shrink-0 bg-surface-container rounded border border-outline-variant book-card-inner-stroke overflow-hidden">
+                        <a href="chi-tiet-sach.html?id=${item.id}">
+                            <img alt="${item.title}" class="w-full h-full object-cover" src="${item.image}"/>
+                        </a>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs hover:text-primary">
+                                <a href="chi-tiet-sach.html?id=${item.id}">${item.title}</a>
+                            </h3>
+                            <p class="font-label-md text-label-md text-on-surface-variant">${item.author}</p>
+                        </div>
+                        <div class="flex items-center justify-between mt-md">
+                            <div class="flex items-center border border-outline-variant rounded-lg bg-surface">
+                                <button onclick="changeQty('${item.id}', -1)" class="px-sm py-xs hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">remove</span></button>
+                                <span class="px-md font-label-md">${item.quantity}</span>
+                                <button onclick="changeQty('${item.id}', 1)" class="px-sm py-xs hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">add</span></button>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-title-lg text-title-lg text-primary">${formatVND(item.price * item.quantity)}</p>
+                                <button onclick="removeItem('${item.id}')" class="text-label-sm text-error mt-xs hover:underline flex items-center gap-xs">
+                                    <span class="material-symbols-outlined text-[16px]">delete</span> Gỡ bỏ
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(itemDiv);
+            });
+
+            // Calculate Subtotal
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            calculateSummary(subtotal);
+        }
+
+        // Qty adjustments
+        window.changeQty = function(id, delta) {
+            updateCartQuantity(id, delta);
+            renderCartPage();
+        };
+
+        window.removeItem = function(id) {
+            removeFromCart(id);
+            renderCartPage();
+        };
+
+        // Clear all cart
+        document.getElementById('btn-clear-all').onclick = () => {
+            clearCart();
+            renderCartPage();
+        };
+
+        // Recalculate billing details
+        function calculateSummary(subtotal) {
+            const cart = getCart();
+            const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+            // Get shipping option
+            const shippingRadio = document.querySelector('input[name="shipping"]:checked');
+            const shippingCost = shippingRadio ? parseInt(shippingRadio.value) : 25000;
+
+            // Apply discounts
+            let discountAmount = 0;
+            if (discountType === 'fixed') {
+                discountAmount = discountVal;
+            } else if (discountType === 'freeship') {
+                discountAmount = shippingCost;
+            }
+
+            const total = Math.max(0, subtotal + shippingCost - discountAmount);
+
+            // DOM updates
+            document.getElementById('summary-subtotal-label').textContent = `Tạm tính (${totalQty} sản phẩm)`;
+            document.getElementById('summary-subtotal').textContent = formatVND(subtotal);
+            document.getElementById('summary-shipping').textContent = formatVND(shippingCost);
+            document.getElementById('summary-discount').textContent = `-${formatVND(discountAmount)}`;
+            document.getElementById('summary-total').textContent = formatVND(total);
+        }
+
+        // Add event listeners to shipping radio inputs
+        document.querySelectorAll('input[name="shipping"]').forEach(radio => {
+            radio.addEventListener('change', () => {
+                const subtotal = getCart().reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                calculateSummary(subtotal);
+            });
+        });
+
+        // Apply coupon code
+        document.getElementById('btn-apply-coupon').onclick = () => {
+            const couponInput = document.getElementById('coupon-input');
+            const couponMsg = document.getElementById('coupon-message');
+            const code = couponInput.value.trim().toUpperCase();
+
+            couponMsg.classList.remove('hidden', 'text-error', 'text-primary');
+
+            if (code === 'GIAM20') {
+                discountType = 'fixed';
+                discountVal = 20000;
+                couponMsg.textContent = "Áp dụng thành công mã giảm 20.000đ!";
+                couponMsg.classList.add('text-primary');
+            } else if (code === 'FREESHIP') {
+                discountType = 'freeship';
+                discountVal = 0;
+                couponMsg.textContent = "Áp dụng thành công mã miễn phí vận chuyển!";
+                couponMsg.classList.add('text-primary');
+            } else if (code === '') {
+                discountType = null;
+                discountVal = 0;
+                couponMsg.classList.add('hidden');
+            } else {
+                discountType = null;
+                discountVal = 0;
+                couponMsg.textContent = "Mã giảm giá không hợp lệ hoặc đã hết hạn.";
+                couponMsg.classList.add('text-error');
+            }
+
+            couponMsg.classList.remove('hidden');
+
+            const subtotal = getCart().reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            calculateSummary(subtotal);
+        };
+
+        // Form fields prepopulate
+        function prepopulateForm() {
+            const user = getCurrentUser();
+            if (user) {
+                document.getElementById('checkout-name').value = user.name || '';
+                document.getElementById('checkout-phone').value = user.phone || '';
+                document.getElementById('checkout-email').value = user.username || '';
+            }
+        }
+
+        // Place Order Submit
+        document.getElementById('btn-place-order').onclick = () => {
+            const cart = getCart();
+            if (cart.length === 0) return;
+
+            const name = document.getElementById('checkout-name').value.trim();
+            const phone = document.getElementById('checkout-phone').value.trim();
+            const email = document.getElementById('checkout-email').value.trim();
+            const address = document.getElementById('checkout-address').value.trim();
+
+            if (!name || !phone || !address) {
+                showNotification("Vui lòng điền đầy đủ Thông tin giao hàng!");
+                return;
+            }
+
+            // Create Order Object
+            const shippingRadio = document.querySelector('input[name="shipping"]:checked');
+            const shippingCost = shippingRadio ? parseInt(shippingRadio.value) : 25000;
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            let discountAmount = 0;
+            if (discountType === 'fixed') {
+                discountAmount = discountVal;
+            } else if (discountType === 'freeship') {
+                discountAmount = shippingCost;
+            }
+            
+            const finalTotal = Math.max(0, subtotal + shippingCost - discountAmount);
+            const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+            const orderId = `ML-${Math.floor(100000 + Math.random() * 900000)}`;
+            const today = new Date();
+            const dateStr = `${today.getDate().toString().padStart(2, '0')}/${(today.getMonth() + 1).toString().padStart(2, '0')}/${today.getFullYear()}`;
+
+            const newOrder = {
+                id: orderId,
+                date: dateStr,
+                total: finalTotal,
+                itemsCount: totalQty,
+                status: "Chờ xử lý",
+                customerEmail: email || getCurrentUser()?.username || '',
+                items: cart.map(item => ({ id: item.id, title: item.title, quantity: item.quantity, price: item.price }))
+            };
+
+            // Deduct book stock simulated
+            const books = getBooks();
+            cart.forEach(item => {
+                const book = books.find(b => b.id === item.id);
+                if (book) {
+                    book.stock = Math.max(0, book.stock - item.quantity);
+                }
+            });
+            saveBooks(books);
+
+            // Save order
+            const orders = getOrders();
+            orders.unshift(newOrder);
+            saveOrders(orders);
+
+            // Clear Cart
+            clearCart();
+
+            // Display Success Modal
+            document.getElementById('modal-order-id').textContent = orderId;
+            document.getElementById('modal-order-total').textContent = formatVND(finalTotal);
+            document.getElementById('modal-order-address').textContent = `${name} | ${phone} | ${address}`;
+
+            const modal = document.getElementById('success-modal');
+            const modalContent = modal.querySelector('div');
+            
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 50);
+        };
+
+        // Close Modal & Redirect
+        document.getElementById('btn-modal-close').onclick = () => {
+            window.location.href = 'trang-ca-nhan.html';
+        };
+
+        // DOM Setup on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCartPage();
+            prepopulateForm();
+        });
+    </script>
+</body></html>

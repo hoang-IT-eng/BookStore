@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trang chủ - Nhà sách Hiện đại</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f9f9f8",
+                        "on-secondary-fixed": "#351000",
+                        "on-secondary-container": "#5e2300",
+                        "on-tertiary-fixed": "#410007",
+                        "on-background": "#1a1c1c",
+                        "on-tertiary-fixed-variant": "#92001b",
+                        "on-primary-container": "#87bbce",
+                        "inverse-primary": "#9acee1",
+                        "surface": "#f9f9f8",
+                        "tertiary-container": "#90001b",
+                        "on-surface-variant": "#40484b",
+                        "primary-fixed": "#b6ebfe",
+                        "surface-container-highest": "#e2e2e2",
+                        "tertiary-fixed": "#ffdad8",
+                        "secondary-fixed": "#ffdbcc",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#001f28",
+                        "primary-container": "#0f4c5c",
+                        "surface-container": "#eeeeed",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f3f4f3",
+                        "on-primary-fixed-variant": "#114d5d",
+                        "surface-dim": "#dadad9",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#ff9694",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#fd7729",
+                        "tertiary-fixed-dim": "#ffb3b0",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#ffb693",
+                        "secondary": "#a04100",
+                        "outline": "#70787c",
+                        "primary": "#003441",
+                        "surface-container-high": "#e8e8e7",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f9f9f8",
+                        "on-surface": "#1a1c1c",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#9acee1",
+                        "inverse-surface": "#2f3130",
+                        "inverse-on-surface": "#f1f1f0",
+                        "tertiary": "#660010",
+                        "surface-tint": "#306576",
+                        "on-secondary-fixed-variant": "#7a3000",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c0c8cb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "40px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "xxl": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Playfair Display"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "title-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "title-lg": ["20px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .book-card-shadow {
+            transition: all 0.3s ease;
+        }
+        .book-card-shadow:hover {
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.04);
+            transform: translateY(-4px);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<link href="css/main.css" rel="stylesheet"/>
+<script src="js/app.js"></script>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="w-full sticky top-0 z-50 bg-surface border-b border-outline-variant shadow-sm">
+<div class="max-w-7xl mx-auto px-lg py-md flex items-center justify-between gap-xl">
+<div class="flex items-center gap-xl">
+<a class="font-display-lg text-display-lg text-primary tracking-tight" href="index.html">The Modern Library</a>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="text-primary font-bold border-b-2 border-primary py-xs transition-colors duration-200" href="danh-muc-sach.html">Danh mục</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="danh-muc-sach.html?filter=bestseller">Bán chạy</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="danh-muc-sach.html?filter=new">Sách mới</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="danh-muc-sach.html?filter=deals">Khuyến mãi</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="blog-review-sach.html">Blog</a>
+</nav>
+</div>
+<div class="flex-1 max-w-md mx-xl hidden lg:block">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-primary">search</span>
+<input class="w-full pl-xl pr-md py-sm bg-surface-container border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all text-body-md" placeholder="Tìm kiếm sách, tác giả..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-xs text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button class="p-xs text-on-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">3</span>
+</button>
+<button class="md:hidden p-xs">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[600px] overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20" data-alt="A grand, expansive library interior with floor-to-ceiling wooden bookshelves filled with thousands of colorful books. Soft sunlight filters through large windows, creating a serene and intellectual atmosphere. The perspective is symmetrical, emphasizing the scale and quiet beauty of the literary collection in a modern corporate light-mode setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCw4F0XxA0DIZ4KoMQdCcTG0bnLfF8mjKbgNxnPUzES_pT1QQEvb25Bdt77qdPMWefj55jhX2bSjmCFyPW2tBNhIqVLM180_Sq7Gq7RTQsENJKvoqV-xUbwIFDvJLJfW-ejyq0ymE1VhZcL0SOd4dBXRRWk3s0mTWcLBA8aaLUUxPn5_d5V-_9QqRfDSkiFS_HDQaeZN2s-YJ8qDuCpdKAzfWZSuBCMtlN3WmrGGAnbqBjBF3GvjZyN-Prl8SiW7miNHJoHKp_mjc"/>
+</div>
+<div class="max-w-7xl mx-auto px-lg h-full flex items-center relative z-10">
+<div class="max-w-2xl">
+<span class="inline-block px-sm py-xs bg-secondary-container text-on-secondary-container rounded-sm font-label-sm mb-md uppercase tracking-wider">Ưu đãi đặc biệt</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-lg">Mở trang sách mới,<br/>Khám phá thế giới rộng lớn.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-lg">Giảm giá đến 40% cho tất cả các tác phẩm mới phát hành trong tháng này. Trải nghiệm không gian đọc sách hiện đại cùng The Modern Library.</p>
+<div class="flex gap-md">
+<button onclick="window.location.href='danh-muc-sach.html'" class="px-xl py-md bg-primary text-on-primary rounded-lg font-title-lg hover:opacity-90 transition-all flex items-center gap-sm">
+                            Xem ngay <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button onclick="window.location.href='blog-review-sach.html'" class="px-xl py-md border-2 border-primary text-primary rounded-lg font-title-lg hover:bg-primary/5 transition-all">
+                            Tìm hiểu thêm
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Flash Sale Section -->
+<section class="py-xxl bg-surface-container-highest">
+<div class="max-w-7xl mx-auto px-lg">
+<div class="flex items-center justify-between mb-xl">
+<div class="flex items-center gap-lg">
+<h2 class="font-headline-md text-headline-md text-primary">Flash Sale</h2>
+<div class="flex gap-sm items-center">
+<span class="font-label-md text-on-surface-variant">Kết thúc trong:</span>
+<div class="flex gap-xs" id="countdown">
+<span class="bg-primary text-on-primary px-sm py-xs rounded font-bold">04</span>
+<span class="text-primary font-bold">:</span>
+<span class="bg-primary text-on-primary px-sm py-xs rounded font-bold">22</span>
+<span class="text-primary font-bold">:</span>
+<span class="bg-primary text-on-primary px-sm py-xs rounded font-bold">15</span>
+</div>
+</div>
+</div>
+<a class="text-primary font-label-md hover:underline" href="danh-muc-sach.html?filter=deals">Xem tất cả</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-lg" id="flash-sale-grid"></div>
+</div>
+</section>
+<!-- Featured Categories -->
+<section class="py-xxl">
+<div class="max-w-7xl mx-auto px-lg">
+<h2 class="font-headline-md text-headline-md text-primary mb-xl text-center">Khám phá theo Thể loại</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-lg">
+<!-- Category Card -->
+<a class="group relative h-48 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all" href="danh-muc-sach.html?category=literature">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A collection of classic literature books with worn spines and gold leaf lettering on a dark mahogany shelf. The lighting is warm and vintage, creating a sense of history and depth. This represents the 'Literature' category in a sophisticated, intellectual bookstore environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfCb-jXX5aF8pKEGnA0VXH-_e7LPDmir284fZawoEAH3pNByIVbnht2kMHU5hRQ6pEkVjgzMI-EwTZgnRV48zuw5AWD1gTxChfJKYhlMXX6DqanosYjrV3-4bPaAGT8hOCIau38LsK1myydtNKmE38X4yXPXewIY7PgsM_frsYGZKWCUih6tyG8vVcleGjmDgpVCfMk_4oxmuipovf3coyYG-fm8An1T2oL7p5A0LLgT462hwIkrNapGJouAQIvPnF7q2O3OkD4sY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-lg">
+<span class="text-white font-headline-sm">Văn học</span>
+<span class="text-white/80 font-label-sm">1,200+ đầu sách</span>
+</div>
+</a>
+<a class="group relative h-48 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all" href="danh-muc-sach.html?category=skills">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A minimalist desk setup with an open notebook, a high-end fountain pen, and a book on personal growth. The aesthetic is clean and productive, utilizing bright daylight and neutral tones to represent the 'Skills &amp; Development' category with professional elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu0XEEskNIF0pJz69faOjZI5nMsbX0ZA18GSPfqyAnRM2GSX6LRttbfYm8CKYdUYqT5m8joPqG9axoDZzB6TBR9YM1xZfpWR7mIlPvRFZKI7BpCHWc7VmQMmAElFfrcgMTr-uxiozS4ZQqigklp_H5MhCax2IsnhwMMOjQVOf91HGUMUB73TfiScvaUm9DWluSMIjmuqZ_G54mUsAQ3GmmBZGmjH-JjuGIMbEbuoUIEVOzPhvTG4M6jBqew7ZeQ_5j38w-eRQLO-E"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-lg">
+<span class="text-white font-headline-sm">Kỹ năng</span>
+<span class="text-white/80 font-label-sm">850+ đầu sách</span>
+</div>
+</a>
+<a class="group relative h-48 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all" href="danh-muc-sach.html?category=children">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A brightly colored children's reading nook with soft pillows and several illustrated books with whimsical animal characters. The light is soft and cheerful, focusing on the vibrant colors and inviting textures that represent the 'Children's Books' category in a modern, friendly way." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfbTSiIOi3PQuqGcSY8TpNgWKfmk05RDGXSrKc2fvif-HHRhTBWMHQb792gF1UvRPenIscQqWA6fM5Iih4sIkrJoca3kxykfMhPAKlRt6GNmIXil4Uc2TVV7cgiHrIQ-yA16pkt60JbKD-tP2IBKtSnmvACxCJJ-BYAlvltdc-gj72yev5Oc-b74KPb4DdirmQH6XHjibxJzayVvKv_FI3msUEJO78ohpT_oyVft-hd128Qbnj-N49ZQja1Tk0NQsrpxYSZbqdIN8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-lg">
+<span class="text-white font-headline-sm">Thiếu nhi</span>
+<span class="text-white/80 font-label-sm">2,400+ đầu sách</span>
+</div>
+</a>
+<a class="group relative h-48 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all" href="danh-muc-sach.html?category=academic">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A stack of clean, modern textbooks on a bright white background, accompanied by a digital tablet. The scene is clinical and organized, representing 'Academic &amp; Textbooks' with a focus on education, clarity, and the integration of traditional and digital learning." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDta2ZeF0UyRSjdW5WID9XylXVeD0cCzmrNSl3VfskoAB0vA3oeo3m0v1jXDMhf895c9I1esf0B-Okwsp6-rXENaEHG_vZSAou32Iq3zovKKB7cI1CmZwyy5SoPpdneCCNnDkN947w-NTjJ9A2o99Cx1pDdaYyXcBCTuufrB8Ofwb29O2yeusrYesM6kjS1TG4hzaGdC8bD7smf16FbX6_xy2N1rwDByq7ctPtfcF_wSJ2WBRxpAIByC9HImCKrBL8vAr2U-6jeJ80"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-lg">
+<span class="text-white font-headline-sm">Sách Giáo khoa</span>
+<span class="text-white/80 font-label-sm">1,100+ đầu sách</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Personalization: Recommended for You -->
+<section class="py-xxl bg-surface-container-low overflow-hidden">
+<div class="max-w-7xl mx-auto px-lg">
+<div class="flex items-center justify-between mb-xl">
+<h2 class="font-headline-md text-headline-md text-primary">Gợi ý dành cho bạn</h2>
+<div class="flex gap-sm">
+<button class="p-sm rounded-full border border-outline-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-sm rounded-full border border-outline-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-lg overflow-x-auto hide-scrollbar pb-lg" id="recommendations-carousel"></div>
+</div>
+</section>
+<!-- Support Section -->
+<section class="py-xxl bg-primary text-on-primary">
+<div class="max-w-7xl mx-auto px-lg">
+<div class="grid md:grid-cols-3 gap-xl">
+<div class="flex flex-col items-center text-center p-lg">
+<span class="material-symbols-outlined text-[48px] mb-md" data-icon="local_shipping">local_shipping</span>
+<h3 class="font-title-lg mb-sm">Giao hàng Miễn phí</h3>
+<p class="text-on-primary/80 font-body-md">Cho mọi đơn hàng trên 500.000đ tại TP.HCM và Hà Nội.</p>
+</div>
+<div class="flex flex-col items-center text-center p-lg">
+<span class="material-symbols-outlined text-[48px] mb-md" data-icon="assignment_return">assignment_return</span>
+<h3 class="font-title-lg mb-sm">Đổi trả Dễ dàng</h3>
+<p class="text-on-primary/80 font-body-md">Cam kết đổi trả trong vòng 30 ngày nếu có lỗi sản xuất.</p>
+</div>
+<div class="flex flex-col items-center text-center p-lg">
+<span class="material-symbols-outlined text-[48px] mb-md" data-icon="support_agent">support_agent</span>
+<h3 class="font-title-lg mb-sm">Hỗ trợ 24/7</h3>
+<p class="text-on-primary/80 font-body-md">Đội ngũ hỗ trợ luôn sẵn sàng giải đáp mọi thắc mắc của bạn.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-xxl bg-surface-container-highest">
+<div class="max-w-7xl mx-auto px-lg py-xxl grid grid-cols-1 md:grid-cols-4 gap-xl">
+<div class="col-span-1 md:col-span-1">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-lg">The Modern Library</h2>
+<p class="text-on-surface-variant font-body-md mb-lg">
+                    Nơi hội tụ tri thức và phong cách sống hiện đại. Chúng tôi mang đến những cuốn sách chất lượng nhất cho cộng đồng yêu sách.
+                </p>
+<div class="flex gap-md">
+<a class="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-on-primary hover:opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined text-sm">social_leaderboard</span>
+</a>
+<a class="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-on-primary hover:opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-title-lg text-primary mb-lg">Khám phá</h4>
+<ul class="space-y-sm">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="danh-muc-sach.html">Tất cả sản phẩm</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="danh-muc-sach.html">Sách bán chạy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="danh-muc-sach.html">Sách mới về</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="danh-muc-sach.html">Khuyến mãi</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-title-lg text-primary mb-lg">Chính sách</h4>
+<ul class="space-y-sm">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Shipping Info</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-title-lg text-primary mb-lg">Newsletter</h4>
+<p class="text-on-surface-variant font-body-md mb-lg">Đăng ký nhận tin để không bỏ lỡ các ưu đãi mới nhất.</p>
+<div class="flex gap-xs">
+<input class="flex-1 px-md py-sm rounded border border-outline-variant focus:ring-2 focus:ring-primary outline-none" placeholder="Email của bạn" type="email"/>
+<button class="px-md py-sm bg-primary text-on-primary rounded font-label-md">Gửi</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-lg py-lg border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-md">
+<p class="text-on-surface-variant font-body-md text-sm">© 2024 The Modern Library. All rights reserved.</p>
+<div class="flex gap-lg">
+<img alt="Visa" class="h-6 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCreiRQtZBEBGm21qZpZZScdCIpZtSGG2tz9B9wyygRBMJ4VHfPZtKQP5uTzV7rOJazSbS9jEiMa_CFfNTUNYirDWjkM_qPXSk2hEwddxBqsELaHTAeuJruRTfCRVUzrU1H5yE_V48w1TRpA8kOj1LGWjopVoefTdJ9ASOHUHiieTddtl8w6RFWg6Yg4nYlmwlu45L_3aXdpfuX1UN3Xrqm67Dw-xOVIyuV_9oxJL4QRqgV-PXZg9rAoqvRLv8mEWvz3686g_U9-ZQ"/>
+<img alt="Mastercard" class="h-6 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhf2LQaO3snjaAlOQ27DoW6JQfjlUwqDdtcrrOPPxhwApEFgqh5uMnAnhGfpCp_yYje0x6Xvh3DM86DHb3irSkHicIfv5kuymIBiPJTWUiUY4tO5M9QFEL9Hyk3RWZtphfxAEXJ1U1W2vt4Lk_3UKxg4uGoMZY9O_teyz39HmipcomwPmGcM_GS4FoozvERAwzW5lm7gH8BExqiGTWsVMt8Ch4MLobI7g77iIxJ1B-vMbI7Ezg30-hTYR8VbUJNNzYRPm16sug2kw"/>
+</div>
+</div>
+</footer>
+<!-- Chatbot Floating Button -->
+<div class="fixed bottom-lg right-lg z-50">
+<button class="w-14 h-14 bg-secondary text-on-secondary rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-all active:scale-95 group relative" id="chatbot-toggle">
+<span class="material-symbols-outlined text-[28px]">chat</span>
+<span class="absolute -top-1 -right-1 flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-secondary-container"></span>
+</span>
+</button>
+<!-- Simple Chat Mockup -->
+<div class="hidden absolute bottom-20 right-0 w-80 bg-surface rounded-xl shadow-2xl border border-outline-variant overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-300" id="chat-window">
+<div class="bg-primary p-md text-on-primary flex justify-between items-center">
+<span class="font-title-lg">Hỗ trợ trực tuyến</span>
+<button class="material-symbols-outlined" id="chat-close">close</button>
+</div>
+<div class="h-64 p-md overflow-y-auto bg-surface-container-low flex flex-col gap-sm">
+<div class="bg-surface p-sm rounded-lg rounded-tl-none self-start max-w-[80%] text-sm shadow-sm">
+                    Chào bạn! Tôi có thể giúp gì cho bạn hôm nay?
+                </div>
+</div>
+<div class="p-md border-t border-outline-variant flex gap-sm">
+<input class="flex-1 px-sm py-xs text-sm border border-outline-variant rounded outline-none focus:ring-1 focus:ring-primary" placeholder="Nhập tin nhắn..." type="text"/>
+<button class="material-symbols-outlined text-primary">send</button>
+</div>
+</div>
+</div>
+<script>
+        // Chatbot micro-interaction
+        const chatToggle = document.getElementById('chatbot-toggle');
+        const chatWindow = document.getElementById('chat-window');
+        const chatClose = document.getElementById('chat-close');
+
+        chatToggle.addEventListener('click', () => {
+            chatWindow.classList.toggle('hidden');
+        });
+
+        chatClose.addEventListener('click', () => {
+            chatWindow.classList.add('hidden');
+        });
+
+        // Simple Countdown Timer
+        let time = 4 * 3600 + 22 * 60 + 15;
+        const display = document.getElementById('countdown');
+        
+        setInterval(() => {
+            time--;
+            let h = Math.floor(time / 3600);
+            let m = Math.floor((time % 3600) / 60);
+            let s = time % 60;
+            
+            display.innerHTML = `
+                <span class="bg-primary text-on-primary px-sm py-xs rounded font-bold">${h.toString().padStart(2, '0')}</span>
+                <span class="text-primary font-bold">:</span>
+                <span class="bg-primary text-on-primary px-sm py-xs rounded font-bold">${m.toString().padStart(2, '0')}</span>
+                <span class="text-primary font-bold">:</span>
+                <span class="bg-primary text-on-primary px-sm py-xs rounded font-bold">${s.toString().padStart(2, '0')}</span>
+            `;
+        }, 1000);
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

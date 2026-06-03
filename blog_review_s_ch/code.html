@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Modern Library | Blog &amp; Reviews</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+        }
+        .blog-card-hover:hover .blog-image {
+            transform: scale(1.05);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#2f3130",
+                    "surface-tint": "#306576",
+                    "outline": "#70787c",
+                    "background": "#f9f9f8",
+                    "secondary-fixed": "#ffdbcc",
+                    "on-background": "#1a1c1c",
+                    "tertiary-fixed": "#ffdad8",
+                    "outline-variant": "#c0c8cb",
+                    "on-primary-fixed-variant": "#114d5d",
+                    "tertiary-fixed-dim": "#ffb3b0",
+                    "secondary": "#a04100",
+                    "surface-variant": "#e2e2e2",
+                    "surface-dim": "#dadad9",
+                    "primary-fixed-dim": "#9acee1",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#ff9694",
+                    "primary-fixed": "#b6ebfe",
+                    "tertiary": "#660010",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#40484b",
+                    "on-secondary-fixed-variant": "#7a3000",
+                    "inverse-primary": "#9acee1",
+                    "on-secondary-container": "#5e2300",
+                    "on-tertiary-fixed": "#410007",
+                    "primary": "#003441",
+                    "secondary-container": "#fd7729",
+                    "surface-container": "#eeeeed",
+                    "on-primary-fixed": "#001f28",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#e8e8e7",
+                    "inverse-on-surface": "#f1f1f0",
+                    "surface-bright": "#f9f9f8",
+                    "on-secondary-fixed": "#351000",
+                    "on-primary-container": "#87bbce",
+                    "surface-container-low": "#f3f4f3",
+                    "on-tertiary-fixed-variant": "#92001b",
+                    "on-surface": "#1a1c1c",
+                    "surface": "#f9f9f8",
+                    "secondary-fixed-dim": "#ffb693",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#0f4c5c",
+                    "surface-container-highest": "#e2e2e2",
+                    "tertiary-container": "#90001b",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "xl": "40px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "xxl": "64px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Playfair Display"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "title-lg": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Playfair Display"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "title-lg": ["20px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopNavBar -->
+<header class="w-full sticky top-0 z-50 bg-surface border-b border-outline-variant shadow-sm">
+<div class="max-w-7xl mx-auto px-lg py-md flex items-center justify-between gap-xl">
+<div class="flex items-center gap-xl">
+<a class="font-display-lg text-display-lg text-primary" href="#">The Modern Library</a>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="#">Categories</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="#">Bestsellers</a>
+<a class="text-primary font-bold border-b-2 border-primary hover:text-secondary transition-colors duration-200" href="#">New Releases</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="#">Deals</a>
+</nav>
+</div>
+<div class="flex items-center gap-md flex-1 max-w-md ml-xl hidden lg:flex">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-primary">search</span>
+<input class="w-full pl-[48px] pr-md py-sm bg-surface border border-outline-variant rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-body-md" placeholder="Tìm kiếm bài viết, sách..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-sm hover:bg-surface-container rounded-full transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined text-on-surface">person</span>
+</button>
+<button class="p-sm hover:bg-surface-container rounded-full transition-colors active:scale-95 duration-100 relative">
+<span class="material-symbols-outlined text-on-surface">shopping_cart</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-lg pt-xxl">
+<!-- Hero Section / Categories -->
+<section class="mb-xxl text-center">
+<h1 class="font-display-lg text-display-lg mb-md text-primary">Blog &amp; Review Sách</h1>
+<p class="max-w-2xl mx-auto text-on-surface-variant text-body-lg mb-xl">
+                Nơi hội tụ những tâm hồn yêu sách, chia sẻ những góc nhìn đa chiều về thế giới văn chương đương đại.
+            </p>
+<div class="flex flex-wrap justify-center gap-md">
+<button class="px-lg py-sm bg-primary text-on-primary rounded-full font-label-md hover:bg-primary-container hover:text-on-primary-container transition-all">Review sách mới</button>
+<button class="px-lg py-sm bg-surface border border-outline-variant text-on-surface rounded-full font-label-md hover:bg-surface-container transition-all">Góc tác giả</button>
+<button class="px-lg py-sm bg-surface border border-outline-variant text-on-surface rounded-full font-label-md hover:bg-surface-container transition-all">Kinh nghiệm đọc sách</button>
+</div>
+</section>
+<!-- Featured Post - Large Layout -->
+<article class="relative group mb-xxl rounded-xl overflow-hidden bg-surface-container-low border border-outline-variant flex flex-col md:flex-row shadow-sm hover:shadow-lg transition-shadow duration-300">
+<div class="md:w-3/5 overflow-hidden h-[400px] md:h-auto">
+<img alt="Featured Review" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A cinematic, high-angle photograph of a vintage bookstore with warm, golden light filtering through tall mahogany bookshelves. In the center, a solitary wooden table holds a stack of leather-bound books and a pair of elegant reading glasses. The atmosphere is quiet, intellectual, and deeply comforting, reflecting a premium editorial aesthetic with rich textures and soft amber highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiWGf7K_-UMc_EvcVknmAmoNkDTUInhOrBA0AUGliQbQZQuyerrKQZZHQu6cbPkihpPKl85CmFWRI5Ntw_wEqgnFMcXVvNxv5YmrfdltkuH6SS-phhPLWr5S8lZ4m8f1gKSid3X5-7J9vZ239r32kF1lBVsTYLlzgy_H6CHcvoUsK6tfZ11tU6CS2GKeGoHlhl7rl2Xk6x3kgmJ5fGiInh5ZktCwVgQFgboSNmHjfjjgmdjP1r1a6hNiktRqEWbScRSIoWqgrVNxA"/>
+</div>
+<div class="md:w-2/5 p-xl flex flex-col justify-center">
+<span class="text-secondary font-label-sm uppercase tracking-wider mb-sm">Tiêu điểm</span>
+<h2 class="font-headline-md text-headline-md text-primary mb-md leading-tight">Nghệ Thuật Của Sự Chờ Đợi: Review 'Bên Kia Ngọn Núi'</h2>
+<p class="text-on-surface-variant text-body-md mb-lg line-clamp-3">
+                    Một tác phẩm đầy ám ảnh về sự kiên nhẫn và lòng trắc ẩn trong những thời khắc tăm tối nhất của cuộc đời. Tác giả đã khéo léo lồng ghép những chi tiết đời thường vào một bối cảnh siêu thực...
+                </p>
+<div class="flex items-center gap-md mb-lg">
+<div class="w-10 h-10 rounded-full bg-outline-variant"></div>
+<div>
+<p class="font-label-md text-on-surface">Minh Anh</p>
+<p class="text-label-sm text-on-surface-variant">15 Tháng 10, 2023</p>
+</div>
+</div>
+<a class="inline-flex items-center text-primary font-bold hover:gap-md transition-all" href="#">
+                    Đọc tiếp <span class="material-symbols-outlined ml-xs">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Post Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-xl mb-xxl">
+<!-- Card 1 -->
+<div class="blog-card-hover group flex flex-col bg-surface border border-outline-variant rounded-xl overflow-hidden hover:shadow-lg transition-all">
+<div class="relative h-64 overflow-hidden">
+<img alt="Blog post 1" class="blog-image w-full h-full object-cover transition-transform duration-500" data-alt="A sophisticated flat-lay photograph of a modern hardcover book with a minimalist cover design, lying on a white marble surface. Next to the book is a steaming ceramic cup of coffee and a small sprig of dried lavender. The lighting is bright and clean, typical of a high-end lifestyle magazine, with a palette of crisp whites, soft grays, and deep teal accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxhr5IqndlzG8sPOfc5aEzkjGka_u6MUDmO_2-Y152a1HygF1m2TK-ssc-CgPmt1PPPTYcpkT6dDLcwd7OGVuvMwW13AWiXsxkVxmPNvu66EqO5rdswXXivHK90Z2-JUv0KJZFz6du7EQt__vL5iXrj3Sc4s8cp7sTPKHwkH1UzYQjWKkmKP2DF_K1LhHG7_xlmFoxeCMtIaRz12YJPhSWlYLP3gGUre4FfmIrjA0mLDJ_cEUwEQ89hqahHPH0_KRmbZ2y7pAwPS0"/>
+<div class="absolute top-md left-md">
+<span class="px-sm py-xs bg-surface/90 backdrop-blur-sm text-primary text-label-sm rounded border border-outline-variant">Review sách mới</span>
+</div>
+</div>
+<div class="p-lg flex flex-col flex-1">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm leading-snug">Tại sao 'Nhà Giả Kim' vẫn luôn là kim chỉ nam cho giới trẻ?</h3>
+<p class="text-on-surface-variant text-body-md line-clamp-3 mb-xl">
+                        Khám phá lại hành trình đi tìm kho báu của Santiago và những bài học vượt thời gian về ước mơ và định mệnh.
+                    </p>
+<div class="mt-auto pt-md border-t border-outline-variant flex items-center justify-between">
+<span class="text-label-md text-on-surface-variant">Bởi <span class="text-on-surface font-semibold">Trần Hiếu</span></span>
+<span class="text-label-sm text-on-surface-variant">20 Th10</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="blog-card-hover group flex flex-col bg-surface border border-outline-variant rounded-xl overflow-hidden hover:shadow-lg transition-all">
+<div class="relative h-64 overflow-hidden">
+<img alt="Blog post 2" class="blog-image w-full h-full object-cover transition-transform duration-500" data-alt="A moody, atmospheric close-up of an open book lying on a dark wooden floor, surrounded by fallen autumn leaves. The light is dim and focused, creating strong shadows and highlighting the texture of the yellowed paper. This scene evokes a sense of nostalgia, mystery, and the deep emotional connection of reading during the quiet, colder months." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATUxgWkpbrbs9r24KlCq7cNJ5xqt_gg29wnhTH---74xMC2P0vHiX562ImMHdDzUs-ag2IfHKTb2t9AKLd0U2trug8Xc3xETrzO9nMOS66E01BuTzqDcknEAAknb74UiaSefLsbHIGZkPGEKHthjbe1On9bxtCfJPVLPg5y_K8QmyOXdV2BhZuepLFu6JE8PQgINN7JBsjxsA9mUTgUtgbZulrIGS0EFBkFm9-4Jh_7tBru4PseDcokMk-E_yVR2hijBytSMNopI8"/>
+<div class="absolute top-md left-md">
+<span class="px-sm py-xs bg-surface/90 backdrop-blur-sm text-primary text-label-sm rounded border border-outline-variant">Kinh nghiệm</span>
+</div>
+</div>
+<div class="p-lg flex flex-col flex-1">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm leading-snug">5 Cách để duy trì thói quen đọc sách mỗi ngày</h3>
+<p class="text-on-surface-variant text-body-md line-clamp-3 mb-xl">
+                        Đừng để sự bận rộn lấy đi thời gian của bạn. Những mẹo nhỏ giúp bạn đọc được ít nhất 50 trang mỗi ngày mà không mệt mỏi.
+                    </p>
+<div class="mt-auto pt-md border-t border-outline-variant flex items-center justify-between">
+<span class="text-label-md text-on-surface-variant">Bởi <span class="text-on-surface font-semibold">Lê Vy</span></span>
+<span class="text-label-sm text-on-surface-variant">18 Th10</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="blog-card-hover group flex flex-col bg-surface border border-outline-variant rounded-xl overflow-hidden hover:shadow-lg transition-all">
+<div class="relative h-64 overflow-hidden">
+<img alt="Blog post 3" class="blog-image w-full h-full object-cover transition-transform duration-500" data-alt="A portrait-style image of a contemporary author sitting in a sun-drenched studio filled with tall windows and lush green plants. The author is looking thoughtfully out the window, with a typewriter and handwritten notes on the desk in front of them. The visual style is airy, professional, and inspired by high-end editorial portraits in literary journals." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArJLntzHVJJ78tPIl1ZmTJtOXXjM0TxMyUGW9wgwpIQrcFptP4qOvcFt1QVtMcfXTUIS7mpGfhfyDVGERoML0OxK3jrPTatFF_vJ0LQ_GANkuyDXgOZNshDmE6kP8_zoMDYqm8tXZUzi0mOAN1e3wnA2TRQdriGr9OgWktaHgcSRcq-4xWbt8NSid39ja3XBLsnYYCZkCeq5mt4aJQ06KHrbcoyHdBBrSUBofQsFy5x0d68ggkMIIOP4Nh-YMhzhOh1JvzSijnaRI"/>
+<div class="absolute top-md left-md">
+<span class="px-sm py-xs bg-surface/90 backdrop-blur-sm text-primary text-label-sm rounded border border-outline-variant">Góc tác giả</span>
+</div>
+</div>
+<div class="p-lg flex flex-col flex-1">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm leading-snug">Trò chuyện cùng tác giả Nguyễn Nhật Ánh về tác phẩm mới</h3>
+<p class="text-on-surface-variant text-body-md line-clamp-3 mb-xl">
+                        Những tiết lộ thú vị về nguồn cảm hứng đằng sau cuốn sách vừa ra mắt và những dự định trong tương lai.
+                    </p>
+<div class="mt-auto pt-md border-t border-outline-variant flex items-center justify-between">
+<span class="text-label-md text-on-surface-variant">Bởi <span class="text-on-surface font-semibold">Ban Biên Tập</span></span>
+<span class="text-label-sm text-on-surface-variant">12 Th10</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Newsletter Section -->
+<section class="mb-xxl rounded-2xl bg-primary py-xxl px-lg relative overflow-hidden">
+<!-- Decorative circle -->
+<div class="absolute -top-xxl -right-xxl w-[300px] h-[300px] bg-primary-container/20 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-xxl -left-xxl w-[300px] h-[300px] bg-secondary/10 rounded-full blur-3xl"></div>
+<div class="max-w-3xl mx-auto text-center relative z-10">
+<h2 class="font-display-lg text-display-lg text-on-primary mb-md">Đừng bỏ lỡ bất kỳ chương nào</h2>
+<p class="text-primary-fixed text-body-lg mb-xl">
+                    Đăng ký bản tin của chúng tôi để nhận những bài review mới nhất, danh sách sách nên đọc và ưu đãi độc quyền hàng tuần.
+                </p>
+<form class="flex flex-col sm:flex-row gap-md items-center max-w-lg mx-auto" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã đăng ký!');">
+<input aria-label="Email address" class="w-full px-lg py-md rounded-lg bg-surface text-on-surface border-none focus:ring-2 focus:ring-secondary transition-all outline-none" placeholder="Địa chỉ email của bạn" required="" type="email"/>
+<button class="w-full sm:w-auto whitespace-nowrap px-xxl py-md bg-secondary text-on-secondary font-bold rounded-lg hover:bg-secondary-container transition-all shadow-md active:scale-95" type="submit">
+                        Đăng ký ngay
+                    </button>
+</form>
+<p class="mt-md text-label-sm text-primary-fixed-dim">Chúng tôi tôn trọng quyền riêng tư của bạn. Không bao giờ spam.</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-xxl bg-surface-container-highest">
+<div class="max-w-7xl mx-auto px-lg py-xxl grid grid-cols-1 md:grid-cols-4 gap-xl">
+<div class="flex flex-col gap-md">
+<span class="font-headline-sm text-headline-sm text-primary">The Modern Library</span>
+<p class="text-on-surface-variant text-body-md">
+                    Điểm đến tin cậy cho những người yêu tri thức và cái đẹp trong từng con chữ.
+                </p>
+<div class="flex gap-md mt-sm">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">call</span></a>
+</div>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="font-bold text-on-surface mb-md">Khám phá</h4>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Tất cả bài viết</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Review sách mới</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Góc tác giả</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Kinh nghiệm đọc</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="font-bold text-on-surface mb-md">Hỗ trợ</h4>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Shipping Info</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="font-bold text-on-surface mb-md">Văn phòng</h4>
+<p class="text-on-surface-variant text-body-md">
+                    123 Đường Văn Chương, Quận 1,<br/>
+                    Thành phố Hồ Chí Minh, Việt Nam
+                </p>
+<p class="text-on-surface-variant text-body-md mt-sm">
+                    Hotline: (028) 1234 5678
+                </p>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-lg py-md border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-md">
+<p class="text-on-surface-variant text-label-md">© 2024 The Modern Library. All rights reserved.</p>
+<div class="flex gap-lg">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md" href="#">Facebook</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md" href="#">Instagram</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md" href="#">Twitter</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple logic to handle scroll effects
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+
+        // Search bar focus effect
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.parentElement.classList.add('scale-[1.02]');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.parentElement.classList.remove('scale-[1.02]');
+        });
+    </script>
+</body></html>

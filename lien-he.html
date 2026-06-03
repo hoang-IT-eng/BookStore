@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Liên hệ | The Modern Library</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" rel="stylesheet"/>
+<link href="css/main.css" rel="stylesheet"/>
+<script>tailwind.config={theme:{extend:{colors:{primary:"#003441","on-primary":"#fff",secondary:"#a04100",background:"#f9f9f8","on-surface":"#1a1c1c","outline-variant":"#c0c8cb","surface-container":"#eeeeed"}}}};</script>
+<script src="js/app.js"></script>
+</head>
+<body class="bg-background text-on-surface font-sans">
+<header class="sticky top-0 z-50 bg-white border-b border-outline-variant shadow-sm">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<a href="index.html" class="text-2xl font-bold text-primary font-serif">The Modern Library</a>
+<a href="index.html" class="text-secondary hover:underline">← Về trang chủ</a>
+</div></header>
+<main class="max-w-3xl mx-auto px-6 py-16">
+<h1 class="text-4xl font-serif text-primary mb-4">Liên hệ</h1>
+<p class="text-on-surface-variant mb-8">Chúng tôi luôn sẵn sàng lắng nghe bạn. Gửi tin nhắn và chúng tôi sẽ phản hồi trong vòng 24 giờ.</p>
+<div class="grid md:grid-cols-2 gap-8 mb-12">
+<div class="p-6 bg-surface-container rounded-xl"><span class="material-symbols-outlined text-primary text-3xl">location_on</span>
+<p class="mt-2 font-bold">Địa chỉ</p><p class="text-sm text-on-surface-variant">123 Đường Văn Chương, Q.1, TP.HCM</p></div>
+<div class="p-6 bg-surface-container rounded-xl"><span class="material-symbols-outlined text-primary text-3xl">call</span>
+<p class="mt-2 font-bold">Hotline</p><p class="text-sm text-on-surface-variant">1900-xxxx (8h–22h hàng ngày)</p></div>
+</div>
+<form id="contact-form" class="space-y-4 bg-white p-8 rounded-xl border border-outline-variant">
+<div><label class="block font-bold mb-1">Họ tên</label><input required class="w-full px-4 py-2 border border-outline-variant rounded-lg" type="text"/></div>
+<div><label class="block font-bold mb-1">Email</label><input required class="w-full px-4 py-2 border border-outline-variant rounded-lg" type="email"/></div>
+<div><label class="block font-bold mb-1">Nội dung</label><textarea required rows="5" class="w-full px-4 py-2 border border-outline-variant rounded-lg"></textarea></div>
+<button type="submit" class="px-8 py-3 bg-primary text-on-primary rounded-lg font-bold hover:opacity-90">Gửi tin nhắn</button>
+</form>
+</main>
+<footer class="text-center py-8 text-sm text-on-surface-variant border-t"><p>© 2024 The Modern Library. All rights reserved.</p></footer>
+<script>document.getElementById('contact-form').onsubmit=(e)=>{e.preventDefault();showNotification('Cảm ơn bạn! Chúng tôi sẽ liên hệ sớm.');e.target.reset();};</script>
+</body></html>

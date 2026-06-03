@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chi tiết bài viết | The Modern Library</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="css/main.css" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{primary:"#003441","on-primary":"#ffffff",secondary:"#a04100",background:"#f9f9f8","on-surface":"#1a1c1c","on-surface-variant":"#40484b","outline-variant":"#c0c8cb","surface-container":"#eeeeed","primary-container":"#0f4c5c","on-primary-container":"#87bbce"},fontFamily:{display:["Playfair Display"],body:["Inter"]}}}};</script>
+<script src="js/app.js"></script>
+</head>
+<body class="bg-background text-on-surface font-body">
+<header class="w-full sticky top-0 z-50 bg-surface border-b border-outline-variant shadow-sm">
+<div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+<a class="font-display text-2xl text-primary font-bold" href="index.html">The Modern Library</a>
+<nav class="hidden md:flex gap-6">
+<a class="text-on-surface-variant hover:text-secondary" href="danh-muc-sach.html">Danh mục</a>
+<a class="text-primary font-bold border-b-2 border-primary" href="blog-review-sach.html">Blog</a>
+<a class="text-on-surface-variant hover:text-secondary" href="gio-hang-thanh-toan.html">Giỏ hàng</a>
+</nav>
+<button class="md:hidden mobile-menu-btn p-2"><span class="material-symbols-outlined">menu</span></button>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-6 py-12">
+<nav class="text-sm text-on-surface-variant mb-8 flex gap-2 flex-wrap">
+<a href="index.html" class="hover:text-primary">Trang chủ</a><span>/</span>
+<a href="blog-review-sach.html" class="hover:text-primary">Blog</a><span>/</span>
+<span id="breadcrumb-title" class="text-primary">...</span>
+</nav>
+<article id="blog-content"></article>
+<section class="mt-12 p-6 bg-surface-container rounded-xl border border-outline-variant" id="related-book"></section>
+</main>
+<footer class="w-full mt-16 bg-surface-container py-12 px-6 text-center text-on-surface-variant text-sm">
+<p>© 2024 The Modern Library. All rights reserved.</p>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const id = new URLSearchParams(location.search).get('id') || '1';
+    const post = getBlogPost(id);
+    if (!post) { document.getElementById('blog-content').innerHTML = '<p>Bài viết không tồn tại.</p>'; return; }
+    document.title = post.title + ' | The Modern Library';
+    document.getElementById('breadcrumb-title').textContent = post.title;
+    document.getElementById('blog-content').innerHTML = `
+        <img src="${post.image}" alt="${post.title}" class="w-full h-80 object-cover rounded-xl mb-8"/>
+        <span class="text-secondary text-sm uppercase tracking-wider">${post.category}</span>
+        <h1 class="font-display text-4xl text-primary mt-2 mb-4">${post.title}</h1>
+        <p class="text-on-surface-variant mb-6">${post.author} • ${post.date} • ${post.readTime}</p>
+        <div class="prose text-lg leading-relaxed whitespace-pre-line text-on-surface">${post.content}</div>`;
+    const book = getBooks().find(b => b.id === post.bookId);
+    if (book) {
+        document.getElementById('related-book').innerHTML = `
+            <h3 class="font-bold text-primary mb-4">Sách liên quan</h3>
+            <div class="flex gap-4 items-center">
+                <img src="${book.image}" alt="${book.title}" class="w-20 h-28 object-cover rounded"/>
+                <div><h4 class="font-bold"><a href="chi-tiet-sach.html?id=${book.id}" class="hover:text-secondary">${book.title}</a></h4>
+                <p class="text-on-surface-variant text-sm">${book.author}</p>
+                <p class="text-primary font-bold mt-1">${formatVND(book.price)}</p>
+                <button onclick="addToCart('${book.id}')" class="mt-2 px-4 py-2 bg-secondary text-white rounded text-sm font-bold">Thêm vào giỏ</button></div></div>`;
+    }
+});
+</script>
+</body></html>
