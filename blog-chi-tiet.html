@@ -2,7 +2,7 @@
 <html lang="vi"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Chi tiết bài viết | The Modern Library</title>
+<title>Chi tiết bài viết | BOOKSTORE</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -13,7 +13,7 @@
 <body class="bg-background text-on-surface font-body">
 <header class="w-full sticky top-0 z-50 bg-surface border-b border-outline-variant shadow-sm">
 <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-<a class="font-display text-2xl text-primary font-bold" href="index.html">The Modern Library</a>
+<a class="font-display text-2xl text-primary font-bold" href="index.html">BOOKSTORE</a>
 <nav class="hidden md:flex gap-6">
 <a class="text-on-surface-variant hover:text-secondary" href="danh-muc-sach.html">Danh mục</a>
 <a class="text-primary font-bold border-b-2 border-primary" href="blog-review-sach.html">Blog</a>
@@ -32,14 +32,14 @@
 <section class="mt-12 p-6 bg-surface-container rounded-xl border border-outline-variant" id="related-book"></section>
 </main>
 <footer class="w-full mt-16 bg-surface-container py-12 px-6 text-center text-on-surface-variant text-sm">
-<p>© 2024 The Modern Library. All rights reserved.</p>
+<p>© 2024 BOOKSTORE. All rights reserved.</p>
 </footer>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const id = new URLSearchParams(location.search).get('id') || '1';
     const post = getBlogPost(id);
     if (!post) { document.getElementById('blog-content').innerHTML = '<p>Bài viết không tồn tại.</p>'; return; }
-    document.title = post.title + ' | The Modern Library';
+    document.title = post.title + ' | BOOKSTORE';
     document.getElementById('breadcrumb-title').textContent = post.title;
     document.getElementById('blog-content').innerHTML = `
         <img src="${post.image}" alt="${post.title}" class="w-full h-80 object-cover rounded-xl mb-8"/>
