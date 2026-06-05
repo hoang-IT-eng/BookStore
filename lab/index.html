@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Các bài Lab - Nhà sách Hiện đại</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #f5f5f5; }
+    .lab-card { transition: box-shadow 0.2s ease, transform 0.2s ease; }
+    .lab-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    .lab-link {
+      display: block;
+      background: #e8f0fe;
+      color: #1a56e8;
+      border-radius: 6px;
+      padding: 7px 12px;
+      font-size: 13.5px;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .lab-link:hover { background: #c7d9fc; text-decoration: underline; }
+    .nav-active { border-bottom: 2px solid #fff; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav style="background: #d32f2f;" class="w-full sticky top-0 z-50 shadow-md">
+    <div class="max-w-5xl mx-auto px-6 flex items-center h-12">
+      <a href="../index.html"
+         class="text-white font-bold text-base mr-10 tracking-wide hover:opacity-80 transition-opacity whitespace-nowrap">
+        BOOKSTORE
+      </a>
+      <div class="flex items-center gap-8 flex-1">
+        <a href="../index.html" class="text-white text-sm font-medium hover:opacity-80 transition-opacity">Trang chủ</a>
+        <a href="../danh-muc-sach.html" class="text-white text-sm font-medium hover:opacity-80 transition-opacity">Danh mục</a>
+        <a href="../blog-review-sach.html" class="text-white text-sm font-medium hover:opacity-80 transition-opacity">Blog</a>
+        <a href="../lien-he.html" class="text-white text-sm font-medium hover:opacity-80 transition-opacity">Liên hệ</a>
+        <a href="index.html" class="text-white text-sm nav-active pb-0.5">Các bài Lab</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE TITLE ===== -->
+  <div class="max-w-5xl mx-auto px-6 pt-8 pb-4">
+    <h1 class="text-2xl font-bold text-gray-800">Các bài Lab</h1>
+    <p class="text-gray-500 text-sm mt-1">Tổng hợp 8 bài thực hành Web — click vào từng bài tập để mở</p>
+  </div>
+
+  <!-- ===== LAB GRID ===== -->
+  <main class="max-w-5xl mx-auto px-6 pb-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Lab 01 -->
+    <div class="lab-card bg-white rounded-xl border border-gray-200 p-6 flex flex-col items-center gap-3">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14" viewBox="0 0 48 48">
+        <path fill="#FFA000" d="M40 12H22l-4-4H8c-2.2 0-4 1.8-4 4v8h40v-4c0-2.2-1.8-4-4-4z"/>
+        <path fill="#FFCA28" d="M40 12H8c-2.2 0-4 1.8-4 4v20c0 2.2 1.8 4 4 4h32c2.2 0 4-1.8 4-4V16c0-2.2-1.8-4-4-4z"/>
+      </svg>
+      <h2 class="font-bold text-gray-800 text-center text-[15px]">Lab 1: Giới thiệu HTML</h2>
+      <div class="w-full flex flex-col gap-2 mt-1">
+        <a href="Lab01/Lab01/Vi_du/index.html" class="lab-link">Xem bài tập</a>
+      </div>
+    </div>
+
+    <!-- Lab 02 -->
+    <div class="lab-card bg-white rounded-xl border border-gray-200 p-6 flex flex-col items-center gap-3">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14" viewBox="0 0 48 48">
+        <path fill="#FFA000" d="M40 12H22l-4-4H8c-2.2 0-4 1.8-4 4v8h40v-4c0-2.2-1.8-4-4-4z"/>
+        <path fill="#FFCA28" d="M40 12H8c-2.2 0-4 1.8-4 4v20c0 2.2 1.8 4 4 4h32c2.2 0 4-1.8 4-4V16c0-2.2-1.8-4-4-4z"/>
+      </svg>
+      <h2 class="font-bold text-gray-800 text-center text-[15px]">Lab 2: Định dạng cơ bản</h2>
+      <div class="w-full flex flex-col gap-2 mt-1">
+        <a href="Lab02/Lab02/lab02_bai1.html" class="lab-link">Bài tập 2.1</a>
+        <a href="Lab02/Lab02/lab02_bai2.html" class="lab-link">Bài tập 2.2</a>
+        <a href="Lab02/Lab02/lab02_bai3.html" class="lab-link">Bài tập 2.3</a>
+      </div>
+    </div>
+
+    <!-- Lab 03 -->
+    <div class="lab-card bg-white rounded-xl border border-gray-200 p-6 flex flex-col items-center gap-3">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14" viewBox="0 0 48 48">
+        <path fill="#FFA000" d="M40 12H22l-4-4H8c-2.2 0-4 1.8-4 4v8h40v-4c0-2.2-1.8-4-4-4z"/>
+        <path fill="#FFCA28" d="M40 12H8c-2.2 0-4 1.8-4 4v20c0 2.2 1.8 4 4 4h32c2.2 0 4-1.8 4-4V16c0-2.2-1.8-4-4-4z"/>
+      </svg>
+      <h2 class="font-bold text-gray-800 text-center text-[15px]">Lab 3: Thiết kế Layout</h2>
+      <div class="w-full flex flex-col gap-2 mt-1">
+        <a href="Lab03/lab03_bai1.html" class="lab-link">Bài tập 3.1</a>
+        <a href="Lab03/lab03_bai2.html" class="lab-link">Bài tập 3.2</a>
+        <a href="Lab03/lab03_bai3.html" class="lab-link">Bài tập 3.3</a>
+        <a href="Lab03/Vi_du/index.html" class="lab-link">Ví dụ</a>
+      </div>
+    </div>
+
+    <!-- Lab 04 -->
+    <div class="lab-card bg-white rounded-xl border border-gray-200 p-6 flex flex-col items-center gap-3">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14" viewBox="0 0 48 48">
+        <path fill="#FFA000" d="M40 12H22l-4-4H8c-2.2 0-4 1.8-4 4v8h40v-4c0-2.2-1.8-4-4-4z"/>
+        <path fill="#FFCA28" d="M40 12H8c-2.2 0-4 1.8-4 4v20c0 2.2 1.8 4 4 4h32c2.2 0 4-1.8 4-4V16c0-2.2-1.8-4-4-4z"/>
+      </svg>
+      <h2 class="font-bold text-gray-800 text-center text-[15px]">Lab 4: Làm việc với Form</h2>
+      <div class="w-full flex flex-col gap-2 mt-1">
+        <a href="Lab04/lab04_bai1.html" class="lab-link">Bài tập 4.1</a>
+        <a href="Lab04/lab04_bai2.html" class="lab-link">Bài tập 4.2</a>
+        <a href="Lab04/lab04_bai3.html" class="lab-link">Bài tập 4.3</a>
+        <a href="Lab04/Vi_du/index.html" class="lab-link">Ví dụ</a>
+      </div>
+    </div>
+
+    <!-- Lab 05 -->
+    <div class="lab-card bg-white rounded-xl border border-gray-200 p-6 flex flex-col items-center gap-3">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14" viewBox="0 0 48 48">
+        <path fill="#FFA000" d="M40 12H22l-4-4H8c-2.2 0-4 1.8-4 4v8h40v-4c0-2.2-1.8-4-4-4z"/>
+        <path fill="#FFCA28" d="M40 12H8c-2.2 0-4 1.8-4 4v20c0 2.2 1.8 4 4 4h32c2.2 0 4-1.8 4-4V16c0-2.2-1.8-4-4-4z"/>
+      </svg>
+      <h2 class="font-bold text-gray-800 text-center text-[15px]">Lab 5: Menu &amp; Navigation</h2>
+      <div class="w-full flex flex-col gap-2 mt-1">
+        <a href="Lab05/lab05_menu.html" class="lab-link">Menu Lab05</a>
+        <a href="Lab05/Bai_2/index.html" class="lab-link">Bài tập 5.2</a>
+        <a href="Lab05/Vi_du/index.html" class="lab-link">Ví dụ</a>
+      </div>
+    </div>
+
+    <!-- Lab 06 -->
+    <div class="lab-card bg-white rounded-xl border border-gray-200 p-6 flex flex-col items-center gap-3">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14" viewBox="0 0 48 48">
+        <path fill="#FFA000" d="M40 12H22l-4-4H8c-2.2 0-4 1.8-4 4v8h40v-4c0-2.2-1.8-4-4-4z"/>
+        <path fill="#FFCA28" d="M40 12H8c-2.2 0-4 1.8-4 4v20c0 2.2 1.8 4 4 4h32c2.2 0 4-1.8 4-4V16c0-2.2-1.8-4-4-4z"/>
+      </svg>
+      <h2 class="font-bold text-gray-800 text-center text-[15px]">Lab 6: Responsive Web</h2>
+      <div class="w-full flex flex-col gap-2 mt-1">
+        <a href="Lab06/lab06_bai2.html" class="lab-link">Bài tập 6.2</a>
+        <a href="Lab06/lab06_bai3.html" class="lab-link">Bài tập 6.3</a>
+        <a href="Lab06/lab06_menu_responsive.html" class="lab-link">Menu Responsive</a>
+        <a href="Lab06/Vi_du/index.html" class="lab-link">Ví dụ</a>
+      </div>
+    </div>
+
+    <!-- Lab 07 -->
+    <div class="lab-card bg-white rounded-xl border border-gray-200 p-6 flex flex-col items-center gap-3">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14" viewBox="0 0 48 48">
+        <path fill="#FFA000" d="M40 12H22l-4-4H8c-2.2 0-4 1.8-4 4v8h40v-4c0-2.2-1.8-4-4-4z"/>
+        <path fill="#FFCA28" d="M40 12H8c-2.2 0-4 1.8-4 4v20c0 2.2 1.8 4 4 4h32c2.2 0 4-1.8 4-4V16c0-2.2-1.8-4-4-4z"/>
+      </svg>
+      <h2 class="font-bold text-gray-800 text-center text-[15px]">Lab 7: Animation &amp; Effect</h2>
+      <div class="w-full flex flex-col gap-2 mt-1">
+        <a href="Lab07/demo_bai_2/index.html" class="lab-link">Demo Bài 2</a>
+        <a href="Lab07/Vi_du/index.html" class="lab-link">Xem bài tập</a>
+      </div>
+    </div>
+
+    <!-- Lab 08 -->
+    <div class="lab-card bg-white rounded-xl border border-gray-200 p-6 flex flex-col items-center gap-3">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14" viewBox="0 0 48 48">
+        <path fill="#FFA000" d="M40 12H22l-4-4H8c-2.2 0-4 1.8-4 4v8h40v-4c0-2.2-1.8-4-4-4z"/>
+        <path fill="#FFCA28" d="M40 12H8c-2.2 0-4 1.8-4 4v20c0 2.2 1.8 4 4 4h32c2.2 0 4-1.8 4-4V16c0-2.2-1.8-4-4-4z"/>
+      </svg>
+      <h2 class="font-bold text-gray-800 text-center text-[15px]">Lab 8: Đa phương tiện</h2>
+      <div class="w-full flex flex-col gap-2 mt-1">
+        <a href="Lab08/lab08_slider.html" class="lab-link">Slider</a>
+        <a href="Lab08/lab08_slider_auto.html" class="lab-link">Slider Auto</a>
+        <a href="Lab08/lab08_json.html" class="lab-link">JSON</a>
+        <a href="Lab08/Vi_du_1/index.html" class="lab-link">Ví dụ 8.1</a>
+        <a href="Lab08/Vi_du_2/index.html" class="lab-link">Ví dụ 8.2</a>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>
